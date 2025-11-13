@@ -27,7 +27,7 @@ export function SlidesPresentation() {
             Building Production-Ready AI Agents
           </p>
           <p className="text-2xl text-gray-400 text-center mt-8">
-            Nico Albanese, AI SDK @ Vercel
+            Will Sather, Field Engineering @ Vercel
           </p>
         </div>
       ),

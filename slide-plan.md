@@ -4,7 +4,7 @@
 
 **Title:** Announcing AI SDK 6 Beta
 **Subtitle:** Building Production-Ready AI Agents
-**Speaker:** Nico Albanese, AI SDK @ Vercel
+**Speaker:** Will Sather, Field Engineering @ Vercel
 
 ---
 
