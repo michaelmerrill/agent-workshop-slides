@@ -1,7 +1,9 @@
 "use client"
 
+import React from "react"
+
 import type { ReactElement } from "react"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Maximize, Plus, X, Type } from "lucide-react"
 
@@ -302,12 +304,11 @@ export function SlidesPresentation() {
                     <span className="text-[#a1a1a1]">// Type-safe on the client</span>
                     {"\n"}
                     <span className="text-[#f75f8f]">import</span> {"{"}{" "}
-                    <span className="text-[#52a8ff]">InferAgentUIMessage</span>{" "}
-                    {"}"} <span className="text-[#f75f8f]">from</span>{" "}
-                    <span className="text-[#62c073]>"ai"</span>
-                    {"\n"}\
-                    {"\n"}\
-                    <span className="text-[#f75f8f]\">type</span> <span className="text-[#52a8ff]">MyAgentMessage</span>{" "}
+                    <span className="text-[#52a8ff]">InferAgentUIMessage</span> {"}"}{" "}
+                    <span className="text-[#f75f8f]">from</span> <span className="text-[#62c073]">"ai"</span>
+                    {"\n"}
+                    {"\n"}
+                    <span className="text-[#f75f8f]">type</span> <span className="text-[#52a8ff]">MyAgentMessage</span>{" "}
                     <span className="text-[#f75f8f]">=</span> {"\n"}
                     {"  "}
                     <span className="text-[#52a8ff]">InferAgentUIMessage</span>
@@ -337,7 +338,7 @@ export function SlidesPresentation() {
     },
     {
       id: 7,
-      title: \"Configure Agents at Runtime",
+      title: "Configure Agents at Runtime",
       content: (
         <div className="flex flex-col justify-start h-full">
           <h1 className="text-5xl font-bold text-white mb-6">Dynamic Call Options</h1>
@@ -478,7 +479,7 @@ export function SlidesPresentation() {
     },
     {
       id: 8,
-      title: \"Structured Output - Now Production Ready",
+      title: "Structured Output - Now Production Ready",
       content: (
         <div className="flex flex-col justify-start h-full px-12">
           <h1 className="text-5xl font-bold text-white mb-8">Structured Output (stable)</h1>
@@ -689,7 +690,7 @@ export function SlidesPresentation() {
     },
     {
       id: 9,
-      title: \"Human-in-the-Loop Made Easy",
+      title: "Human-in-the-Loop Made Easy",
       content: (
         <div className="flex flex-col justify-start h-full">
           <h1 className="text-5xl font-bold text-white mb-12">Tool Execution Approval</h1>
@@ -804,7 +805,7 @@ export function SlidesPresentation() {
     {
       id: 10,
       title: "Demo Time",
-      content: (\
+      content: (
         <div className="flex flex-col items-center justify-center h-full gap-8">
           <h1 className="text-8xl font-bold text-white text-center">Demo Time</h1>
           <p className="text-3xl text-gray-300 text-center">Building an agent with tool approval</p>
@@ -813,7 +814,7 @@ export function SlidesPresentation() {
     },
     {
       id: 11,
-      title: "Additional Features",\
+      title: "Additional Features",
       content: (
         <div className="flex flex-col justify-start h-full">
           <h1 className="text-5xl font-bold text-white mb-16">Additional Features</h1>
@@ -843,7 +844,7 @@ export function SlidesPresentation() {
     {
       id: 12,
       title: "Questions?",
-      content: (\
+      content: (
         <div className="flex flex-col items-center justify-center h-full gap-12">
           <h1 className="text-8xl font-bold text-white text-center">Questions?</h1>
           <div className="space-y-6 text-2xl text-gray-300 text-center">
@@ -870,33 +871,33 @@ export function SlidesPresentation() {
 
   const slideContainerRef = useRef<HTMLDivElement | null>(null)
 
-  useEffect(() => {\
+  useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === \"Escape" && isFullscreen) {\
+      if (e.key === "Escape" && isFullscreen) {
         setIsFullscreen(false)
       }
-      if (e.key === "ArrowLeft\" && currentSlide > 0) {
+      if (e.key === "ArrowLeft" && currentSlide > 0) {
         setCurrentSlide(currentSlide - 1)
       }
       if (e.key === "ArrowRight" && currentSlide < slides.length - 1) {
         setCurrentSlide(currentSlide + 1)
       }
     }
-\
+
     window.addEventListener("keydown", handleKeyPress)
     return () => window.removeEventListener("keydown", handleKeyPress)
   }, [currentSlide, isFullscreen])
 
   const nextSlide = () => {
-    if (currentSlide < slides.length - 1) {\
+    if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1)
     }
   }
-\
-  const prevSlide = () => {\
+
+  const prevSlide = () => {
     if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1)\
-    }\
+      setCurrentSlide(currentSlide - 1)
+    }
   }
 
   const enterFullscreen = () => {
@@ -944,7 +945,7 @@ export function SlidesPresentation() {
   const addNewSlide = () => {
     const newSlide: Slide = {
       id: slides.length + 1,
-      title: \`Slide ${slides.length + 1}`,\
+      title: `Slide ${slides.length + 1}`,
       content: (
         <div className="flex flex-col items-center justify-start h-full gap-8">
           <h1
@@ -968,15 +969,15 @@ export function SlidesPresentation() {
   }
 
   const renderSlideContent = (slide: Slide, isEditable = false) => {
-    const disableEditing = (element: ReactElement): ReactElement => {\
+    const disableEditing = (element: ReactElement): ReactElement => {
       if (!React.isValidElement(element)) return element
-\
+
       const props: any = { ...element.props }
 
       // Remove contentEditable and related editing props for text elements
       if (props.contentEditable) {
         props.contentEditable = false
-        props.suppressContentEditableWarning = false\
+        props.suppressContentEditableWarning = false
         // Remove hover effects and cursor styles used for editing
         if (props.className) {
           props.className = props.className.replace("cursor-text", "").replace("hover:bg-white/10", "")
@@ -985,8 +986,8 @@ export function SlidesPresentation() {
 
       // Recursively process children
       if (props.children) {
-        if (Array.isArray(props.children)) {\
-          props.children = props.children.map((child: any) =>\
+        if (Array.isArray(props.children)) {
+          props.children = props.children.map((child: any) =>
             React.isValidElement(child) ? disableEditing(child) : child,
           )
         } else if (React.isValidElement(props.children)) {
@@ -1001,13 +1002,13 @@ export function SlidesPresentation() {
       return disableEditing(slide.content)
     }
 
-    return slide.content\
+    return slide.content
   }
 
   const renderSlide = () => {
     const slideContent = (
       <div
-        ref={slideContainerRef}\
+        ref={slideContainerRef}
         className="w-full aspect-[16/9] relative"
         style={{
           backgroundImage: "url(/slide-background.png)",
@@ -1044,7 +1045,7 @@ export function SlidesPresentation() {
     }
 
     return (
-      <div className=\"rounded-lg p-1 shadow-lg bg-neutral-900">
+      <div className="rounded-lg p-1 shadow-lg bg-neutral-900">
         {/* Browser Chrome */}
         <div className="rounded-t-lg px-4 py-3 flex items-center gap-3 border-b bg-neutral-900 border-neutral-900">
           {/* Traffic Light Buttons */}
@@ -1077,7 +1078,7 @@ export function SlidesPresentation() {
 
   if (isFullscreen) {
     return (
-      <div className=\"fixed inset-0 z-50 bg-black flex items-center justify-center font-sans">
+      <div className="fixed inset-0 z-50 bg-black flex items-center justify-center font-sans">
         <div className="w-full h-full max-w-none">{renderSlide()}</div>
       </div>
     )
