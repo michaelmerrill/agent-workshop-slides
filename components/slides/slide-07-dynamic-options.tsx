@@ -1,4 +1,4 @@
-export function Slide07DynamicCallOptions() {
+export function Slide07DynamicOptions() {
   return (
     <div className="flex flex-col justify-start h-full">
       <h1 className="text-5xl font-bold text-white mb-6">Dynamic Call Options</h1>

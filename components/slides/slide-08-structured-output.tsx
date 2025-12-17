@@ -7,7 +7,7 @@ export function Slide08StructuredOutput() {
         {/* Before - Two separate calls */}
         <div className="flex flex-col">
           <div className="mb-4">
-            <h3 className="text-xl font-semibold text-red-400 mb-2">❌ Before: Two Separate Calls</h3>
+            <h3 className="text-xl font-semibold text-red-400 mb-2">{"❌"} Before: Two Separate Calls</h3>
             <p className="text-sm text-gray-400">Tool calling, then structured output</p>
           </div>
           <div className="bg-black/40 rounded-lg p-4 border border-red-400/30 flex-1">
@@ -110,7 +110,7 @@ export function Slide08StructuredOutput() {
         {/* After - Single call */}
         <div className="flex flex-col">
           <div className="mb-4">
-            <h3 className="text-xl font-semibold text-green-400 mb-2">✅ Now: Single Call</h3>
+            <h3 className="text-xl font-semibold text-green-400 mb-2">{"✅"} Now: Single Call</h3>
             <p className="text-sm text-gray-400">Tools + structured output together</p>
           </div>
           <div className="bg-black/40 rounded-lg p-4 border border-green-400/30 flex-1">
