@@ -1010,7 +1010,7 @@ export function SlidesPresentation() {
         ref={slideContainerRef}
         className="w-full aspect-[16/9] relative"
         style={{
-          backgroundImage: "url(/slide-background.png)",
+          backgroundImage: `url(${currentSlide === 0 ? "/title.svg" : "/blank.svg"})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -1189,7 +1189,7 @@ export function SlidesPresentation() {
               <div
                 className="w-full h-full rounded-lg relative overflow-hidden"
                 style={{
-                  backgroundImage: "url(/slide-background.png)",
+                  backgroundImage: `url(${index === 0 ? "/title.svg" : "/blank.svg"})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
