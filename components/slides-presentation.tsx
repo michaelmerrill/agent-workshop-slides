@@ -137,13 +137,13 @@ export function SlidesPresentation() {
         </div>
 
         {slides.length > 1 && (
-          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
-            <div className="flex gap-2">
+          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
+            <div className="flex gap-1.5">
               {slides.map((_, index) => (
                 <button
                   key={index} // Added key property
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`w-2 h-2 rounded-full transition-colors ${
                     index === currentSlide ? "bg-white" : "bg-white/40"
                   }`}
                 />
