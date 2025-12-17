@@ -13,7 +13,7 @@ export function Slide12Questions() {
           Feedback: <span className="text-[#52a8ff]">github.com/vercel/ai/issues</span>
         </p>
       </div>
-      <p className="text-lg text-gray-500 mt-12">AI SDK 6 Beta available now • Stable release end of 2025</p>
+      <p className="text-lg mt-12 text-[#a0a0a0]">AI SDK 6 Beta available now • Stable release end of 2025</p>
     </div>
   )
 }

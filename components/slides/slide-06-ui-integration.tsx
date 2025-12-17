@@ -59,8 +59,8 @@ export function Slide06UIIntegration() {
               <code>
                 <span className="text-[#a1a1a1]">// Type-safe on the client</span>
                 {"\n"}
-                <span className="text-[#f75f8f]">import</span> {"{"}{" "}
-                <span className="text-[#52a8ff]">InferAgentUIMessage</span> {"}"}{" "}
+                <span className="text-[#f75f8f]">import</span> <span className="text-[#a1a1a1]">{"{"}</span>{" "}
+                <span className="text-[#52a8ff]">InferAgentUIMessage</span> <span className="text-[#a1a1a1]">{"}"}</span>{" "}
                 <span className="text-[#f75f8f]">from</span> <span className="text-[#62c073]">"ai"</span>
                 {"\n"}
                 {"\n"}
@@ -73,8 +73,8 @@ export function Slide06UIIntegration() {
                 <span className="text-[#a1a1a1]">{">;"}</span>
                 {"\n"}
                 {"\n"}
-                <span className="text-[#f75f8f]">const</span> <span className="text-[#a1a1a1]">{"{"}</span>{" "}
-                <span className="text-white">messages</span> <span className="text-[#a1a1a1]">{"}"}</span>{" "}
+                <span className="text-[#f75f8f]">const</span> <span className="text-[#a1a1a1]">{"{ "}</span>
+                <span className="text-white">messages</span> <span className="text-[#a1a1a1]">{" }"}</span>{" "}
                 <span className="text-[#f75f8f]">=</span> <span className="text-[#c472fb]">useChat</span>
                 <span className="text-[#a1a1a1]">{"<"}</span>
                 <span className="text-[#52a8ff]">MyAgentMessage</span>

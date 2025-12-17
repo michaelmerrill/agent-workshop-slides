@@ -1,16 +1,19 @@
-"use client"
+"use client";
 
-import React from "react"
+import React from "react";
 
-import type { ReactElement } from "react"
-import { useState, useRef, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Maximize } from "lucide-react"
+import type { ReactElement } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, Maximize } from "lucide-react";
 
 import {
   Slide01Title,
   Slide02Agenda,
   Slide03WhatsNew,
+  Slide03bAgentDiagram,
+  Slide04bPerspectives,
+  Slide03cAgentMaturity,
   Slide04AgentAbstraction,
   Slide05BuildAgent,
   Slide06UIIntegration,
@@ -18,83 +21,110 @@ import {
   Slide08StructuredOutput,
   Slide09ToolApproval,
   Slide10Demo,
-  Slide11AdditionalFeatures,
   Slide12Questions,
-} from "@/components/slides"
+} from "@/components/slides";
 
 interface Slide {
-  id: number
-  title: string
-  content: ReactElement
+  id: number;
+  title: string;
+  content: ReactElement;
 }
 
 export function SlidesPresentation() {
   const [slides] = useState<Slide[]>([
-    { id: 1, title: "Announcing AI SDK 6 Beta", content: <Slide01Title /> },
-    { id: 2, title: "Today's Agenda", content: <Slide02Agenda /> },
-    { id: 3, title: "What's New in AI SDK 6 Beta", content: <Slide03WhatsNew /> },
-    { id: 4, title: "Agent Abstraction", content: <Slide04AgentAbstraction /> },
-    { id: 5, title: "Build Your Perfect Agent", content: <Slide05BuildAgent /> },
-    { id: 6, title: "Seamless UI Integration", content: <Slide06UIIntegration /> },
-    { id: 7, title: "Dynamic Call Options", content: <Slide07DynamicOptions /> },
-    { id: 8, title: "Structured Output (stable)", content: <Slide08StructuredOutput /> },
-    { id: 9, title: "Tool Execution Approval", content: <Slide09ToolApproval /> },
-    { id: 10, title: "Demo Time", content: <Slide10Demo /> },
-    { id: 11, title: "Additional Features", content: <Slide11AdditionalFeatures /> },
-    { id: 12, title: "Questions?", content: <Slide12Questions /> },
-  ])
+    { id: 1, title: "Build an Agent with Vercel", content: <Slide01Title /> },
+    { id: 2, title: "Agenda", content: <Slide02Agenda /> },
+    {
+      id: 3,
+      title: "What is an Agent",
+      content: <Slide03WhatsNew />,
+    },
+    { id: 4, title: "Agent Diagram", content: <Slide03bAgentDiagram /> },
+    { id: 5, title: "Perspectives", content: <Slide04bPerspectives /> },
+    { id: 6, title: "Agent Maturity", content: <Slide03cAgentMaturity /> },
+    { id: 7, title: "Agent Abstraction", content: <Slide04AgentAbstraction /> },
+    {
+      id: 8,
+      title: "Build Your Perfect Agent",
+      content: <Slide05BuildAgent />,
+    },
+    {
+      id: 9,
+      title: "Seamless UI Integration",
+      content: <Slide06UIIntegration />,
+    },
+    {
+      id: 10,
+      title: "Dynamic Call Options",
+      content: <Slide07DynamicOptions />,
+    },
+    {
+      id: 11,
+      title: "Structured Output (stable)",
+      content: <Slide08StructuredOutput />,
+    },
+    {
+      id: 12,
+      title: "Tool Execution Approval",
+      content: <Slide09ToolApproval />,
+    },
+    { id: 13, title: "Demo", content: <Slide10Demo /> },
+    { id: 14, title: "Questions?", content: <Slide12Questions /> },
+  ]);
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isFullscreen, setIsFullscreen] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const slideContainerRef = useRef<HTMLDivElement | null>(null)
+  const slideContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isFullscreen) {
-        setIsFullscreen(false)
+        setIsFullscreen(false);
       }
       if (e.key === "ArrowLeft" && currentSlide > 0) {
-        setCurrentSlide(currentSlide - 1)
+        setCurrentSlide(currentSlide - 1);
       }
       if (e.key === "ArrowRight" && currentSlide < slides.length - 1) {
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide(currentSlide + 1);
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyPress)
-    return () => window.removeEventListener("keydown", handleKeyPress)
-  }, [currentSlide, isFullscreen, slides.length])
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [currentSlide, isFullscreen, slides.length]);
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
-      setCurrentSlide(currentSlide + 1)
+      setCurrentSlide(currentSlide + 1);
     }
-  }
+  };
 
   const prevSlide = () => {
     if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1)
+      setCurrentSlide(currentSlide - 1);
     }
-  }
+  };
 
   const enterFullscreen = () => {
-    setIsFullscreen(true)
-  }
+    setIsFullscreen(true);
+  };
 
   const renderSlideContent = (slide: Slide, isEditable = false) => {
     const disableEditing = (element: ReactElement): ReactElement => {
-      if (!React.isValidElement(element)) return element
+      if (!React.isValidElement(element)) return element;
 
-      const props: any = { ...element.props }
+      const props: any = { ...element.props };
 
       // Remove contentEditable and related editing props for text elements
       if (props.contentEditable) {
-        props.contentEditable = false
-        props.suppressContentEditableWarning = false
+        props.contentEditable = false;
+        props.suppressContentEditableWarning = false;
         // Remove hover effects and cursor styles used for editing
         if (props.className) {
-          props.className = props.className.replace("cursor-text", "").replace("hover:bg-white/10", "")
+          props.className = props.className
+            .replace("cursor-text", "")
+            .replace("hover:bg-white/10", "");
         }
       }
 
@@ -103,29 +133,36 @@ export function SlidesPresentation() {
         if (Array.isArray(props.children)) {
           props.children = props.children.map((child: any) =>
             React.isValidElement(child) ? disableEditing(child) : child,
-          )
+          );
         } else if (React.isValidElement(props.children)) {
-          props.children = disableEditing(props.children)
+          props.children = disableEditing(props.children);
         }
       }
 
-      return React.cloneElement(element, props)
-    }
+      return React.cloneElement(element, props);
+    };
 
     if (isFullscreen) {
-      return disableEditing(slide.content)
+      return disableEditing(slide.content);
     }
 
-    return slide.content
-  }
+    return slide.content;
+  };
 
   const renderSlide = () => {
+    const getBackgroundImage = () => {
+      if (currentSlide === 0) return "/title.svg"
+      if (currentSlide === 1) return "/agenda.svg"
+      if (currentSlide === 5) return "/agent-maturity.svg"
+      return "/blank.svg"
+    }
+
     const slideContent = (
       <div
         ref={slideContainerRef}
         className="w-full aspect-[16/9] relative"
         style={{
-          backgroundImage: `url(${currentSlide === 0 ? "/title.svg" : "/blank.svg"})`,
+          backgroundImage: `url(${getBackgroundImage()})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -133,10 +170,12 @@ export function SlidesPresentation() {
       >
         {/* Content Area */}
         <div className="absolute inset-0 p-24">
-          <div className="w-full h-full p-16 relative">{renderSlideContent(slides[currentSlide], !isFullscreen)}</div>
+          <div className="w-full h-full p-16 relative">
+            {renderSlideContent(slides[currentSlide], !isFullscreen)}
+          </div>
         </div>
 
-        {slides.length > 1 && (
+        {isFullscreen && slides.length > 1 && (
           <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
             <div className="flex gap-1.5">
               {slides.map((_, index) => (
@@ -152,10 +191,10 @@ export function SlidesPresentation() {
           </div>
         )}
       </div>
-    )
+    );
 
     if (isFullscreen) {
-      return slideContent
+      return slideContent;
     }
 
     return (
@@ -185,23 +224,25 @@ export function SlidesPresentation() {
         </div>
 
         {/* Slide Content */}
-        <div className="bg-gray-900 rounded-b-lg overflow-hidden">{slideContent}</div>
+        <div className="bg-gray-900 rounded-b-lg overflow-hidden">
+          {slideContent}
+        </div>
       </div>
-    )
-  }
+    );
+  };
 
   if (isFullscreen) {
     return (
       <div className="fixed inset-0 z-50 bg-black flex items-center justify-center font-sans">
         <div className="w-full h-full max-w-none">{renderSlide()}</div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="p-8 font-sans bg-black min-h-screen">
       {/* Header Controls */}
-      <div className="max-w-6xl mx-auto mb-6 flex items-center justify-between font-sans">
+      <div className="max-w-7xl mx-auto mb-6 flex items-center justify-between font-sans">
         <div className="flex items-center gap-4 font-sans"></div>
         <div className="flex items-center gap-4 font-sans">
           <span className="text-sm text-gray-300 font-sans">
@@ -215,7 +256,9 @@ export function SlidesPresentation() {
       </div>
 
       {/* Slide Container - Preview Mode */}
-      <div className="max-w-6xl mx-auto rounded-lg overflow-hidden font-sans">{renderSlide()}</div>
+      <div className="max-w-7xl mx-auto rounded-lg overflow-hidden font-sans">
+        {renderSlide()}
+      </div>
 
       {!isFullscreen && slides.length > 1 && (
         <>
@@ -252,38 +295,6 @@ export function SlidesPresentation() {
           <button></button>
         </div>
       )}
-
-      <div className="max-w-6xl mx-auto mt-8">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-bold text-white">My Slide Deck</h3>
-        </div>
-
-        <div className="grid grid-cols-6 gap-4">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id} // Added key property
-              onClick={() => setCurrentSlide(index)}
-              className={`aspect-[16/9] rounded-lg cursor-pointer border-2 transition-colors ${
-                index === currentSlide ? "border-blue-500 bg-blue-500/10" : "border-gray-700 hover:border-gray-500"
-              }`}
-            >
-              <div
-                className="w-full h-full rounded-lg relative overflow-hidden"
-                style={{
-                  backgroundImage: `url(${index === 0 ? "/title.svg" : "/blank.svg"})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="absolute inset-0 p-2 flex items-center justify-center">
-                  <div className="text-xs text-white text-center font-bold">{slide.title}</div>
-                </div>
-              </div>
-              <div className="text-xs text-gray-200 mt-1 text-center">Slide {index + 1}</div>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
-  )
+  );
 }

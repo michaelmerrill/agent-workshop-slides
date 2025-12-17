@@ -8,7 +8,7 @@ export function Slide01Title() {
         <h1 className="text-7xl font-bold text-white leading-tight max-w-5xl">
           Build an Agent with Vercel
         </h1>
-        <p className="text-2xl text-gray-300 max-w-3xl leading-relaxed">
+        <p className="text-2xl max-w-3xl leading-relaxed text-[#a0a0a0]">
           Learn how to go from idea to deployed agent in under an hour using AI
           SDK, Next.js, and Vercel.
         </p>
@@ -21,12 +21,11 @@ export function Slide01Title() {
           alt="Will Sather"
           width={56}
           height={56}
-          className="rounded-full object-cover"
-          style={{ aspectRatio: "1/1" }}
+          className="rounded-full object-cover aspect-square"
         />
         <div className="flex items-baseline gap-3">
           <span className="text-2xl font-medium text-white">Will Sather</span>
-          <span className="text-base text-zinc-400 font-mono">
+          <span className="text-base font-mono text-[#a0a0a0]">
             Field Engineer
           </span>
         </div>
