@@ -866,7 +866,6 @@ export function SlidesPresentation() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const [showNotification, setShowNotification] = useState(true)
   const [isToolbarExpanded, setIsToolbarExpanded] = useState(false)
 
   const slideContainerRef = useRef<HTMLDivElement | null>(null)
@@ -1204,25 +1203,6 @@ export function SlidesPresentation() {
           ))}
         </div>
       </div>
-
-      {showNotification && (
-        <div className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-lg shadow-lg max-w-sm z-40">
-          <div className="flex items-start justify-between gap-3">
-            <div className="text-sm">
-              <div className="font-semibold mb-1">💡 Pro Tip</div>
-              <div>Upload your content and v0 will automatically add it to your slides!</div>
-            </div>
-            <Button
-              onClick={() => setShowNotification(false)}
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/20 p-1 h-auto"
-            >
-              <X className="w-4 h-4" />
-            </Button>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
