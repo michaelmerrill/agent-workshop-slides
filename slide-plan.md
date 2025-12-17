@@ -76,7 +76,7 @@
 
 **Center:**
 
-\`\`\`typescript
+```typescript
 // Build your own multi-agent orchestrator
 class Orchestrator implements Agent {
   constructor(private subAgents: Record<string, Agent>) {}
@@ -89,7 +89,7 @@ class Orchestrator implements Agent {
 const orchestrator = new Orchestrator({
   subAgents: { /* your subagents */ }
 });
-\`\`\`
+```
 
 **Surrounding Examples (in circles/boxes):**
 
@@ -129,7 +129,7 @@ const orchestrator = new Orchestrator({
 
 **Left Side: Backend**
 
-\`\`\`typescript
+```typescript
 // Your custom agent
 class MyCustomAgent implements Agent {
   // Your implementation
@@ -142,11 +142,11 @@ export async function POST(req: Request) {
     messages,
   });
 }
-\`\`\`
+```
 
 **Right Side: Frontend**
 
-\`\`\`typescript
+```typescript
 // Type-safe on the client
 import { InferAgentUIMessage } from "ai";
 
@@ -154,7 +154,7 @@ type MyAgentMessage = InferAgentUIMessage<typeof myCustomAgent>;
 
 const { messages } = useChat<MyAgentMessage>();
 // Full autocomplete and type safety!
-\`\`\`
+```
 
 **Bottom Banner:**
 "Build your agent once, use it everywhere with full type safety"
@@ -170,7 +170,7 @@ Type-safe structured inputs that dynamically modify agent behavior
 
 **Code Example:**
 
-\`\`\`typescript
+```typescript
 const supportAgent = new ToolLoopAgent({
   model: 'anthropic/claude-haiku-4.5',
   callOptionsSchema: z.object({
@@ -191,7 +191,7 @@ await supportAgent.generate({
   prompt: "How do I upgrade?",
   options: { userId: "user_123", accountType: "free" },
 });
-\`\`\`
+```
 
 **Benefits:**
 
@@ -215,7 +215,7 @@ await supportAgent.generate({
 
 **Code Example:**
 
-\`\`\`typescript
+```typescript
 const agent = new ToolLoopAgent({
   model: 'anthropic/claude-haiku-4.5',
   tools: { weather: weatherTool },
@@ -227,7 +227,7 @@ const agent = new ToolLoopAgent({
     }),
   }),
 });
-\`\`\`
+```
 
 **Result:** Multi-step tool calling + structured output
 
@@ -241,7 +241,7 @@ const agent = new ToolLoopAgent({
 
 **Left Column: Enable Approval**
 
-\`\`\`typescript
+```typescript
 export const paymentTool = tool({
   description: "Process payment",
   inputSchema: z.object({
@@ -254,7 +254,7 @@ export const paymentTool = tool({
     return await processPayment(amount, recipient);
   },
 });
-\`\`\`
+```
 
 **Right Column: Key Features**
 
