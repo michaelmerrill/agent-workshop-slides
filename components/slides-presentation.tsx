@@ -5,7 +5,7 @@ import React from "react"
 import type { ReactElement } from "react"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Maximize, Plus, X, Type } from "lucide-react"
+import { ChevronLeft, ChevronRight, Maximize, X, Type } from "lucide-react"
 
 interface Slide {
   id: number
@@ -941,32 +941,6 @@ export function SlidesPresentation() {
     )
   }
 
-  const addNewSlide = () => {
-    const newSlide: Slide = {
-      id: slides.length + 1,
-      title: `Slide ${slides.length + 1}`,
-      content: (
-        <div className="flex flex-col items-center justify-start h-full gap-8">
-          <h1
-            className="text-5xl font-bold text-white text-center text-balance cursor-text hover:bg-white/10 rounded px-4 py-2"
-            contentEditable
-            suppressContentEditableWarning={true}
-          >
-            New Slide Title
-          </h1>
-          <p
-            className="text-xl text-gray-300 text-center text-balance cursor-text hover:bg-white/10 rounded px-4 py-2"
-            contentEditable
-            suppressContentEditableWarning={true}
-          >
-            Add your content here
-          </p>
-        </div>
-      ),
-    }
-    setSlides((prev) => [...prev, newSlide])
-  }
-
   const renderSlideContent = (slide: Slide, isEditable = false) => {
     const disableEditing = (element: ReactElement): ReactElement => {
       if (!React.isValidElement(element)) return element
@@ -1171,10 +1145,6 @@ export function SlidesPresentation() {
       <div className="max-w-6xl mx-auto mt-8">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-xl font-bold text-white">My Slide Deck</h3>
-          <Button onClick={addNewSlide} size="sm" className="bg-blue-600 hover:bg-blue-700">
-            <Plus className="w-4 h-4 mr-2" />
-            Add Slide
-          </Button>
         </div>
 
         <div className="grid grid-cols-6 gap-4">
