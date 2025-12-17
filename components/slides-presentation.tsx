@@ -5,7 +5,7 @@ import React from "react"
 import type { ReactElement } from "react"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Maximize, X, Type } from "lucide-react"
+import { ChevronLeft, ChevronRight, Maximize, X } from "lucide-react"
 
 interface Slide {
   id: number
@@ -866,7 +866,6 @@ export function SlidesPresentation() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const [isToolbarExpanded, setIsToolbarExpanded] = useState(false)
 
   const slideContainerRef = useRef<HTMLDivElement | null>(null)
 
@@ -901,44 +900,6 @@ export function SlidesPresentation() {
 
   const enterFullscreen = () => {
     setIsFullscreen(true)
-  }
-
-  const addTextElement = (slideIndex: number) => {
-    setSlides((prev) =>
-      prev.map((slide, index) => {
-        if (index !== slideIndex) return slide
-
-        // Create a new slide content with an additional text element
-        const updatedContent = (
-          <div key={`slide-content-${slide.id}`} className="flex flex-col items-center justify-start h-full gap-8">
-            <h1
-              className="text-6xl font-bold text-white text-center text-balance cursor-text hover:bg-white/10 rounded px-4 py-2"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              Presentation Title
-            </h1>
-            <p
-              className="text-2xl text-gray-300 text-center text-balance cursor-text hover:bg-white/10 rounded px-4 py-2"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              Your subtitle or tagline goes here
-            </p>
-            <p
-              key="new-text-element" // Added key property
-              className="text-xl text-white text-center cursor-text hover:bg-white/10 rounded px-4 py-2"
-              contentEditable
-              suppressContentEditableWarning={true}
-            >
-              New text element
-            </p>
-          </div>
-        )
-
-        return { ...slide, content: updatedContent }
-      }),
-    )
   }
 
   const renderSlideContent = (slide: Slide, isEditable = false) => {
@@ -1109,35 +1070,16 @@ export function SlidesPresentation() {
       {!isFullscreen && (
         <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-30">
           <div
-            className={`bg-neutral-800 border border-neutral-700 rounded-full shadow-lg transition-all duration-200 ${
-              isToolbarExpanded ? "px-3 py-2" : "p-3"
-            }`}
+            className={`bg-neutral-800 border border-neutral-700 rounded-full shadow-lg transition-all duration-200`}
           >
-            {!isToolbarExpanded ? (
+            <div className="flex items-center gap-2">
               <button
-                onClick={() => setIsToolbarExpanded(true)}
-                className="w-6 h-6 flex items-center justify-center text-white hover:text-blue-400 transition-colors"
+                onClick={() => {}} // Placeholder for removed function
+                className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
               >
-                <Type className="w-4 h-4" />
+                <X className="w-3 h-3" />
               </button>
-            ) : (
-              <div className="flex items-center gap-2">
-                <Button
-                  onClick={() => addTextElement(currentSlide)}
-                  className="bg-blue-600 hover:bg-blue-700 text-xs px-3 py-1 h-auto"
-                  size="sm"
-                >
-                  <Type className="w-3 h-3 mr-1" />
-                  Add Text
-                </Button>
-                <button
-                  onClick={() => setIsToolbarExpanded(false)}
-                  className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       )}
