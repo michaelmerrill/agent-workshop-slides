@@ -5,7 +5,7 @@ import React from "react"
 import type { ReactElement } from "react"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Maximize, X } from "lucide-react"
+import { ChevronLeft, ChevronRight, Maximize } from "lucide-react"
 
 interface Slide {
   id: number
@@ -1068,19 +1068,8 @@ export function SlidesPresentation() {
       )}
 
       {!isFullscreen && (
-        <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-30">
-          <div
-            className={`bg-neutral-800 border border-neutral-700 rounded-full shadow-lg transition-all duration-200`}
-          >
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => {}} // Placeholder for removed function
-                className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            </div>
-          </div>
+        <div className="fixed left-4 top-8 z-30">
+          <button>{/* This button was removed and replaced by the comment */}</button>
         </div>
       )}
 
