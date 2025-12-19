@@ -110,52 +110,13 @@ export function SlidesPresentation() {
     setIsFullscreen(true);
   };
 
-  const renderSlideContent = (slide: Slide, isEditable = false) => {
-    const disableEditing = (element: ReactElement): ReactElement => {
-      if (!React.isValidElement(element)) return element;
-
-      const props: any = { ...element.props };
-
-      // Remove contentEditable and related editing props for text elements
-      if (props.contentEditable) {
-        props.contentEditable = false;
-        props.suppressContentEditableWarning = false;
-        // Remove hover effects and cursor styles used for editing
-        if (props.className) {
-          props.className = props.className
-            .replace("cursor-text", "")
-            .replace("hover:bg-white/10", "");
-        }
-      }
-
-      // Recursively process children
-      if (props.children) {
-        if (Array.isArray(props.children)) {
-          props.children = props.children.map((child: any) =>
-            React.isValidElement(child) ? disableEditing(child) : child,
-          );
-        } else if (React.isValidElement(props.children)) {
-          props.children = disableEditing(props.children);
-        }
-      }
-
-      return React.cloneElement(element, props);
-    };
-
-    if (isFullscreen) {
-      return disableEditing(slide.content);
-    }
-
-    return slide.content;
-  };
-
   const renderSlide = () => {
     const getBackgroundImage = () => {
-      if (currentSlide === 0) return "/title.svg"
-      if (currentSlide === 1) return "/agenda.svg"
-      if (currentSlide === 5) return "/agent-maturity.svg"
-      return "/blank.svg"
-    }
+      if (currentSlide === 0) return "/title.svg";
+      if (currentSlide === 1) return "/agenda.svg";
+      if (currentSlide === 5) return "/agent-maturity.svg";
+      return "/blank.svg";
+    };
 
     const slideContent = (
       <div
@@ -171,7 +132,7 @@ export function SlidesPresentation() {
         {/* Content Area */}
         <div className="absolute inset-0 p-24">
           <div className="w-full h-full p-16 relative">
-            {renderSlideContent(slides[currentSlide], !isFullscreen)}
+            {slides[currentSlide].content}
           </div>
         </div>
 
@@ -288,12 +249,6 @@ export function SlidesPresentation() {
             </Button>
           </div>
         </>
-      )}
-
-      {!isFullscreen && (
-        <div className="fixed left-4 top-8 z-30">
-          <button></button>
-        </div>
       )}
     </div>
   );
