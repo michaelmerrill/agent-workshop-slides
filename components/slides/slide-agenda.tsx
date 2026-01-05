@@ -1,8 +1,8 @@
 export function SlideAgenda() {
   return (
-    <div className="flex flex-col h-full -mx-16 -my-16">
+    <div className="flex flex-col h-full">
       {/* Agenda pill */}
-      <div className="mt-16 mb-20 ml-16">
+      <div className="mt-8 mb-12 ml-8">
         <div className="inline-block bg-white rounded-full px-6 py-2">
           <span className="text-black text-xl font-normal">Agenda</span>
         </div>

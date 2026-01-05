@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function SlideAgentDiagram() {
   return (
-    <div className="flex items-center justify-center h-full">
+    <div className="flex items-center justify-center h-full p-8">
       <Image
         src="/agent.png"
         alt="Agent diagram"

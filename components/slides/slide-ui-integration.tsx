@@ -1,11 +1,11 @@
 export function SlideUIIntegration() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full p-8">
       <h1 className="text-5xl font-bold text-white mb-8">Seamless UI integration</h1>
       <div className="grid grid-cols-2 gap-8 flex-1">
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold text-white mb-4">Backend</h3>
-          <div className="bg-black/40 rounded-lg p-8 border border-white/20 flex-1">
+          <div className="bg-black/40 rounded-lg p-8 border border-[#242424] flex-1">
             <pre className="text-sm overflow-auto leading-relaxed">
               <code>
                 <span className="text-[#a1a1a1]">// Your custom agent</span>
@@ -54,7 +54,7 @@ export function SlideUIIntegration() {
         </div>
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold text-white mb-4">Frontend</h3>
-          <div className="bg-black/40 rounded-lg p-8 border border-white/20 flex-1">
+          <div className="bg-black/40 rounded-lg p-8 border border-[#242424] flex-1">
             <pre className="text-sm overflow-auto leading-relaxed">
               <code>
                 <span className="text-[#a1a1a1]">// Type-safe on the client</span>

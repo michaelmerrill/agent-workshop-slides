@@ -2,7 +2,7 @@ import { Book, Github, MessageCircle } from "lucide-react";
 
 export function SlideQuestions() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full p-8">
       <div className="flex-1 flex items-center justify-center">
         <h1 className="text-8xl font-bold text-white text-center">Q&A</h1>
       </div>

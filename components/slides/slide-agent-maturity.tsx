@@ -1,6 +1,6 @@
 export function SlideAgentMaturity() {
   return (
-    <div className="flex flex-col h-full -mx-16 -my-16">
+    <div className="flex flex-col h-full">
       {/* header */}
       <div className="flex items-center gap-4 px-8 py-6 border-b border-[#242424]">
         <span className="text-white text-2xl font-mono -rotate-45">-&gt;</span>

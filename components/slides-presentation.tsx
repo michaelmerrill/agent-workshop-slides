@@ -21,6 +21,7 @@ import {
   SlideDemo,
   SlideQuestions,
 } from "@/components/slides";
+import { Background } from "@/components/background";
 
 interface Slide {
   id: number;
@@ -84,28 +85,12 @@ export function SlidesPresentation() {
   };
 
   const renderSlide = () => {
-    const getBackgroundImage = () => {
-      if (currentSlide === 0) return "/title.svg";
-      return "/blank.svg";
-    };
-
     const slideContent = (
       <div
         ref={slideContainerRef}
         className="w-full aspect-[16/9] relative"
-        style={{
-          backgroundImage: `url(${getBackgroundImage()})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
       >
-        {/* Content Area */}
-        <div className="absolute inset-0 p-24">
-          <div className="w-full h-full p-16 relative">
-            {slides[currentSlide].content}
-          </div>
-        </div>
+        <Background>{slides[currentSlide].content}</Background>
 
         {isFullscreen && slides.length > 1 && (
           <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex items-center gap-4">

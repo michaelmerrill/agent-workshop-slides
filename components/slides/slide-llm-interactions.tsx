@@ -1,11 +1,11 @@
 export function SlideLLMInteractions() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full p-8">
       <h1 className="text-5xl font-bold text-white mb-8">LLM interactions</h1>
 
       <div className="flex w-full flex-1">
         <div className="flex flex-col w-full">
-          <div className="bg-black/40 rounded-lg p-8 border border-red-400/30 flex-1">
+          <div className="bg-black/40 rounded-lg p-8 border border-[#242424] flex-1">
             <pre className="text-sm overflow-auto leading-relaxed">
               <code>
                 <span className="text-[#6b7280]">// Step 1: Call tool</span>

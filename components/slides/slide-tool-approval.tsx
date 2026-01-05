@@ -1,6 +1,6 @@
 export function SlideToolApproval() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full p-8">
       <h1 className="text-5xl font-bold text-white mb-8">
         ToolLoopAgent options
       </h1>
@@ -10,7 +10,7 @@ export function SlideToolApproval() {
           <h2 className="text-2xl font-semibold text-white mb-4">
             Dynamic call options
           </h2>
-          <div className="bg-black/40 rounded-lg p-8 border border-white/20 flex-1">
+          <div className="bg-black/40 rounded-lg p-8 border border-[#242424] flex-1">
             <pre className="text-sm overflow-auto leading-relaxed">
               <code>
                 <span className="text-[#f75f8f]">const</span>{" "}
@@ -127,7 +127,7 @@ export function SlideToolApproval() {
           <h2 className="text-2xl font-semibold text-white mb-4">
             Tool execution approval
           </h2>
-          <div className="bg-black/40 rounded-lg p-8 border border-white/20 flex-1">
+          <div className="bg-black/40 rounded-lg p-8 border border-[#242424] flex-1">
             <pre className="text-sm overflow-auto leading-relaxed">
               <code>
                 <span className="text-[#f75f8f]">export</span>{" "}

@@ -1,6 +1,6 @@
 export function SlidePerspectives() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full p-8">
       <h1 className="text-5xl font-bold text-white mb-8">Perspectives</h1>
 
       <div className="grid grid-cols-2 gap-8 flex-1">

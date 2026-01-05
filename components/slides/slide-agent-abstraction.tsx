@@ -1,6 +1,6 @@
 export function SlideAgentAbstraction() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full p-8">
       <h1 className="text-5xl font-bold text-white mb-8">Agent abstraction</h1>
       <div className="grid grid-cols-2 gap-8 flex-1">
         {/* left column - stacked boxes */}
@@ -28,7 +28,7 @@ export function SlideAgentAbstraction() {
         </div>
 
         {/* right column - code block */}
-        <div className="bg-black/40 rounded-lg p-8 border border-white/20">
+        <div className="bg-black/40 rounded-lg p-8 border border-[#242424]">
           <pre className="text-sm overflow-auto leading-relaxed">
             <code>
               <span className="text-[#a1a1a1]">// Define the agent</span>
