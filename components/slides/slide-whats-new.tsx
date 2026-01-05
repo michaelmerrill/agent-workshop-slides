@@ -1,4 +1,4 @@
-export function Slide03WhatsNew() {
+export function SlideWhatsNew() {
   return (
     <div className="flex flex-col items-center justify-center h-full">
       <div className="text-9xl text-white mb-8 font-serif">"</div>

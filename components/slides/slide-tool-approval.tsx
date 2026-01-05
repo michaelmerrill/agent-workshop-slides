@@ -1,4 +1,4 @@
-export function Slide09ToolApproval() {
+export function SlideToolApproval() {
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-5xl font-bold text-white mb-8">

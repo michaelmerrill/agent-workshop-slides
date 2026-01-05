@@ -1,6 +1,6 @@
 import { Book, Github, MessageCircle } from "lucide-react";
 
-export function Slide12Questions() {
+export function SlideQuestions() {
   return (
     <div className="flex flex-col h-full">
       <div className="flex-1 flex items-center justify-center">

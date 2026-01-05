@@ -1,4 +1,4 @@
-export function Slide02Agenda() {
+export function SlideAgenda() {
   return (
     <div className="flex flex-col h-full -mx-16 -my-16">
       {/* Agenda pill */}

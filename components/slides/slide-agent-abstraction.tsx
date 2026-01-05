@@ -1,4 +1,4 @@
-export function Slide04AgentAbstraction() {
+export function SlideAgentAbstraction() {
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-5xl font-bold text-white mb-8">Agent abstraction</h1>

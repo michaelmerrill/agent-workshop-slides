@@ -1,4 +1,4 @@
-export function Slide06UIIntegration() {
+export function SlideUIIntegration() {
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-5xl font-bold text-white mb-8">Seamless UI integration</h1>

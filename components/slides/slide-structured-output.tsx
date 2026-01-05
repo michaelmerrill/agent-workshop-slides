@@ -1,4 +1,4 @@
-export function Slide08StructuredOutput() {
+export function SlideStructuredOutput() {
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-5xl font-bold text-white mb-8">Structured output</h1>

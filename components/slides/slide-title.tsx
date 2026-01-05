@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function Slide01Title() {
+export function SlideTitle() {
   return (
     <div className="flex flex-col justify-between h-full">
       {/* title and subtitle */}

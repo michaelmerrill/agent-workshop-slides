@@ -6,20 +6,20 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Maximize } from "lucide-react";
 
 import {
-  Slide01Title,
-  Slide02Agenda,
-  Slide03WhatsNew,
-  Slide03bAgentDiagram,
-  Slide04bPerspectives,
-  Slide03cAgentMaturity,
-  Slide06aLLMInteractions,
-  Slide04AgentAbstraction,
-  Slide05BuildAgent,
-  Slide06UIIntegration,
-  Slide08StructuredOutput,
-  Slide09ToolApproval,
-  Slide10Demo,
-  Slide12Questions,
+  SlideTitle,
+  SlideAgenda,
+  SlideWhatsNew,
+  SlideAgentDiagram,
+  SlidePerspectives,
+  SlideAgentMaturity,
+  SlideLLMInteractions,
+  SlideAgentAbstraction,
+  SlideBuildAgent,
+  SlideUIIntegration,
+  SlideStructuredOutput,
+  SlideToolApproval,
+  SlideDemo,
+  SlideQuestions,
 } from "@/components/slides";
 
 interface Slide {
@@ -29,20 +29,20 @@ interface Slide {
 
 export function SlidesPresentation() {
   const [slides] = useState<Slide[]>([
-    { id: 1, content: <Slide01Title /> },
-    { id: 2, content: <Slide02Agenda /> },
-    { id: 3, content: <Slide03WhatsNew /> },
-    { id: 4, content: <Slide03bAgentDiagram /> },
-    { id: 5, content: <Slide04bPerspectives /> },
-    { id: 6, content: <Slide03cAgentMaturity /> },
-    { id: 7, content: <Slide06aLLMInteractions /> },
-    { id: 8, content: <Slide08StructuredOutput /> },
-    { id: 9, content: <Slide04AgentAbstraction /> },
-    { id: 10, content: <Slide05BuildAgent /> },
-    { id: 11, content: <Slide06UIIntegration /> },
-    { id: 13, content: <Slide09ToolApproval /> },
-    { id: 14, content: <Slide10Demo /> },
-    { id: 15, content: <Slide12Questions /> },
+    { id: 1, content: <SlideTitle /> },
+    { id: 2, content: <SlideAgenda /> },
+    { id: 3, content: <SlideWhatsNew /> },
+    { id: 4, content: <SlideAgentDiagram /> },
+    { id: 5, content: <SlidePerspectives /> },
+    { id: 6, content: <SlideAgentMaturity /> },
+    { id: 7, content: <SlideLLMInteractions /> },
+    { id: 8, content: <SlideStructuredOutput /> },
+    { id: 9, content: <SlideAgentAbstraction /> },
+    { id: 10, content: <SlideBuildAgent /> },
+    { id: 11, content: <SlideUIIntegration /> },
+    { id: 13, content: <SlideToolApproval /> },
+    { id: 14, content: <SlideDemo /> },
+    { id: 15, content: <SlideQuestions /> },
   ]);
 
   const [currentSlide, setCurrentSlide] = useState(0);

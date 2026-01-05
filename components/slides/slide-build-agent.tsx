@@ -1,4 +1,4 @@
-export function Slide05BuildAgent() {
+export function SlideBuildAgent() {
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-5xl font-bold text-white mb-8">Build your perfect agent</h1>

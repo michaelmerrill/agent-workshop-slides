@@ -1,4 +1,4 @@
-export function Slide11AdditionalFeatures() {
+export function SlideAdditionalFeatures() {
   return (
     <div className="flex flex-col justify-start h-full">
       <h1 className="text-5xl font-bold text-white mb-16">Additional Features</h1>

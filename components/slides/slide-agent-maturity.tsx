@@ -1,4 +1,4 @@
-export function Slide03cAgentMaturity() {
+export function SlideAgentMaturity() {
   return (
     <div className="flex flex-col h-full -mx-16 -my-16">
       {/* header */}

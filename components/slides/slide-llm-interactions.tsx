@@ -1,4 +1,4 @@
-export function Slide06aLLMInteractions() {
+export function SlideLLMInteractions() {
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-5xl font-bold text-white mb-8">LLM interactions</h1>
