@@ -15,7 +15,7 @@ export function Slide01Title() {
       </div>
 
       {/* author section with profile pic */}
-      <div className="flex items-center gap-4 mt-8">
+      <a href="https://x.sather.ws" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 mt-8">
         <Image
           src="/headshot.png"
           alt="Will Sather"
@@ -23,13 +23,13 @@ export function Slide01Title() {
           height={56}
           className="rounded-full object-cover aspect-square"
         />
-        <div className="flex items-baseline gap-3">
+        <div className="flex items-baseline gap-3 border-b border-transparent group-hover:border-dotted group-hover:border-zinc-500 pb-1">
           <span className="text-2xl font-medium text-white">Will Sather</span>
           <span className="text-base font-mono text-[#a0a0a0]">
             Field Engineer
           </span>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

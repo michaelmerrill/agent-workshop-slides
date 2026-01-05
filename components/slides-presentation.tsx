@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import type { ReactElement } from "react";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -14,10 +12,10 @@ import {
   Slide03bAgentDiagram,
   Slide04bPerspectives,
   Slide03cAgentMaturity,
+  Slide06aLLMInteractions,
   Slide04AgentAbstraction,
   Slide05BuildAgent,
   Slide06UIIntegration,
-  Slide07DynamicOptions,
   Slide08StructuredOutput,
   Slide09ToolApproval,
   Slide10Demo,
@@ -26,50 +24,25 @@ import {
 
 interface Slide {
   id: number;
-  title: string;
   content: ReactElement;
 }
 
 export function SlidesPresentation() {
   const [slides] = useState<Slide[]>([
-    { id: 1, title: "Build an Agent with Vercel", content: <Slide01Title /> },
-    { id: 2, title: "Agenda", content: <Slide02Agenda /> },
-    {
-      id: 3,
-      title: "What is an Agent",
-      content: <Slide03WhatsNew />,
-    },
-    { id: 4, title: "Agent Diagram", content: <Slide03bAgentDiagram /> },
-    { id: 5, title: "Perspectives", content: <Slide04bPerspectives /> },
-    { id: 6, title: "Agent Maturity", content: <Slide03cAgentMaturity /> },
-    { id: 7, title: "Agent Abstraction", content: <Slide04AgentAbstraction /> },
-    {
-      id: 8,
-      title: "Build Your Perfect Agent",
-      content: <Slide05BuildAgent />,
-    },
-    {
-      id: 9,
-      title: "Seamless UI Integration",
-      content: <Slide06UIIntegration />,
-    },
-    {
-      id: 10,
-      title: "Dynamic Call Options",
-      content: <Slide07DynamicOptions />,
-    },
-    {
-      id: 11,
-      title: "Structured Output (stable)",
-      content: <Slide08StructuredOutput />,
-    },
-    {
-      id: 12,
-      title: "Tool Execution Approval",
-      content: <Slide09ToolApproval />,
-    },
-    { id: 13, title: "Demo", content: <Slide10Demo /> },
-    { id: 14, title: "Questions?", content: <Slide12Questions /> },
+    { id: 1, content: <Slide01Title /> },
+    { id: 2, content: <Slide02Agenda /> },
+    { id: 3, content: <Slide03WhatsNew /> },
+    { id: 4, content: <Slide03bAgentDiagram /> },
+    { id: 5, content: <Slide04bPerspectives /> },
+    { id: 6, content: <Slide03cAgentMaturity /> },
+    { id: 7, content: <Slide06aLLMInteractions /> },
+    { id: 8, content: <Slide08StructuredOutput /> },
+    { id: 9, content: <Slide04AgentAbstraction /> },
+    { id: 10, content: <Slide05BuildAgent /> },
+    { id: 11, content: <Slide06UIIntegration /> },
+    { id: 13, content: <Slide09ToolApproval /> },
+    { id: 14, content: <Slide10Demo /> },
+    { id: 15, content: <Slide12Questions /> },
   ]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -113,7 +86,6 @@ export function SlidesPresentation() {
   const renderSlide = () => {
     const getBackgroundImage = () => {
       if (currentSlide === 0) return "/title.svg";
-      if (currentSlide === 1) return "/agenda.svg";
       if (currentSlide === 5) return "/agent-maturity.svg";
       return "/blank.svg";
     };

@@ -1,7 +1,7 @@
 export function Slide04bPerspectives() {
   return (
     <div className="flex flex-col h-full">
-      <h1 className="text-6xl font-bold text-white mb-16">Perspectives</h1>
+      <h1 className="text-5xl font-bold text-white mb-8">Perspectives</h1>
 
       <div className="grid grid-cols-2 gap-8 flex-1">
         {/* left column */}

@@ -1,7 +1,7 @@
 export function Slide04AgentAbstraction() {
   return (
     <div className="flex flex-col h-full">
-      <h1 className="text-5xl font-bold text-white mb-12">Agent Abstraction</h1>
+      <h1 className="text-5xl font-bold text-white mb-8">Agent abstraction</h1>
       <div className="grid grid-cols-2 gap-8 flex-1">
         {/* left column - stacked boxes */}
         <div className="flex flex-col gap-6">
@@ -44,7 +44,7 @@ export function Slide04AgentAbstraction() {
               {"  "}
               <span className="text-white">model</span>
               <span className="text-[#f75f8f]">:</span>{" "}
-              <span className="text-[#7ec699]">
+              <span className="text-[#62c073]">
                 "anthropic/claude-sonnet-4.5"
               </span>
               <span className="text-[#a1a1a1]">,</span>
@@ -52,7 +52,7 @@ export function Slide04AgentAbstraction() {
               {"  "}
               <span className="text-white">instructions</span>
               <span className="text-[#f75f8f]">:</span>{" "}
-              <span className="text-[#7ec699]">
+              <span className="text-[#62c073]">
                 'You are a helpful weather assistant.'
               </span>
               <span className="text-[#a1a1a1]">,</span>
@@ -89,7 +89,7 @@ export function Slide04AgentAbstraction() {
               {"  "}
               <span className="text-white">prompt</span>
               <span className="text-[#f75f8f]">:</span>{" "}
-              <span className="text-[#7ec699]">
+              <span className="text-[#62c073]">
                 'What is the weather in San Francisco?'
               </span>
               <span className="text-[#a1a1a1]">,</span>

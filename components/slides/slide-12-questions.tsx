@@ -1,19 +1,37 @@
+import { Book, Github, MessageCircle } from "lucide-react";
+
 export function Slide12Questions() {
   return (
-    <div className="flex flex-col items-center justify-center h-full gap-12">
-      <h1 className="text-8xl font-bold text-white text-center">Questions?</h1>
-      <div className="space-y-6 text-2xl text-gray-300 text-center">
-        <p>
-          Documentation: <span className="text-[#52a8ff]">ai-sdk.dev</span>
-        </p>
-        <p>
-          GitHub: <span className="text-[#52a8ff]">github.com/vercel/ai</span>
-        </p>
-        <p>
-          Feedback: <span className="text-[#52a8ff]">github.com/vercel/ai/issues</span>
-        </p>
+    <div className="flex flex-col h-full">
+      <div className="flex-1 flex items-center justify-center">
+        <h1 className="text-8xl font-bold text-white text-center">Q&A</h1>
       </div>
-      <p className="text-lg mt-12 text-[#a0a0a0]">AI SDK 6 Beta available now • Stable release end of 2025</p>
+
+      <div className="grid grid-cols-3 gap-6">
+        <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+          <div className="flex items-center gap-3 mb-2">
+            <Book className="w-4 h-4 text-white" />
+            <h3 className="text-xl font-semibold text-white">Documentation</h3>
+          </div>
+          <a href="https://ai-sdk.dev" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] font-mono hover:underline">ai-sdk.dev</a>
+        </div>
+
+        <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+          <div className="flex items-center gap-3 mb-2">
+            <Github className="w-4 h-4 text-white" />
+            <h3 className="text-xl font-semibold text-white">GitHub</h3>
+          </div>
+          <a href="https://github.com/vercel/ai" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] font-mono hover:underline">github.com/vercel/ai</a>
+        </div>
+
+        <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+          <div className="flex items-center gap-3 mb-2">
+            <MessageCircle className="w-4 h-4 text-white" />
+            <h3 className="text-xl font-semibold text-white">Feedback</h3>
+          </div>
+          <a href="https://github.com/vercel/ai/issues" target="_blank" rel="noopener noreferrer" className="text-[#a0a0a0] font-mono hover:underline">github.com/vercel/ai/issues</a>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 export function Slide05BuildAgent() {
   return (
-    <div className="flex flex-col justify-start h-full">
-      <h1 className="text-5xl font-bold text-white mb-8 text-center">Build Your Perfect Agent</h1>
-      <div className="bg-black/40 rounded-lg p-8 mb-12 border border-white/20">
+    <div className="flex flex-col h-full">
+      <h1 className="text-5xl font-bold text-white mb-8">Build your perfect agent</h1>
+      <div className="bg-black/40 rounded-lg p-8 border border-white/20 flex-1">
         <pre className="text-sm overflow-auto leading-relaxed">
           <code>
             <span className="text-[#a1a1a1]">// Build your own multi-agent orchestrator</span>
