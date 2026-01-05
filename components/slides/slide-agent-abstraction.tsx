@@ -1,12 +1,16 @@
 export function SlideAgentAbstraction() {
   return (
-    <div className="flex flex-col h-full p-8">
-      <h1 className="text-5xl font-bold text-white mb-8">Agent abstraction</h1>
+    <div className="flex flex-col h-full">
+      <div className="flex items-center gap-4 px-8 py-6 border-b border-[#242424]">
+        <h1 className="text-3xl font-bold text-white">Agent abstraction</h1>
+      </div>
+
+      <div className="flex-1 p-8">
       <div className="grid grid-cols-2 gap-8 flex-1">
         {/* left column - stacked boxes */}
         <div className="flex flex-col gap-6">
           <div className="bg-white/5 rounded-lg p-8 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Flexible Interface
             </h3>
             <div className="space-y-3 text-lg text-[#a0a0a0]">
@@ -16,7 +20,7 @@ export function SlideAgentAbstraction() {
             </div>
           </div>
           <div className="bg-white/5 rounded-lg p-8 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Composable Architecture
             </h3>
             <div className="space-y-3 text-lg text-[#a0a0a0]">
@@ -98,6 +102,7 @@ export function SlideAgentAbstraction() {
             </code>
           </pre>
         </div>
+      </div>
       </div>
     </div>
   );

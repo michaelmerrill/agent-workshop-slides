@@ -1,7 +1,11 @@
 export function SlideBuildAgent() {
   return (
-    <div className="flex flex-col h-full p-8">
-      <h1 className="text-5xl font-bold text-white mb-8">Build your perfect agent</h1>
+    <div className="flex flex-col h-full">
+      <div className="flex items-center gap-4 px-8 py-6 border-b border-[#242424]">
+        <h1 className="text-3xl font-bold text-white">Build your perfect agent</h1>
+      </div>
+
+      <div className="flex-1 p-8">
       <div className="bg-black/40 rounded-lg p-8 border border-[#242424] flex-1">
         <pre className="text-sm overflow-auto leading-relaxed">
           <code>
@@ -57,6 +61,7 @@ export function SlideBuildAgent() {
             <span className="text-[#a1a1a1]">{"});"}</span>
           </code>
         </pre>
+      </div>
       </div>
     </div>
   )

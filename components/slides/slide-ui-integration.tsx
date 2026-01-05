@@ -1,7 +1,11 @@
 export function SlideUIIntegration() {
   return (
-    <div className="flex flex-col h-full p-8">
-      <h1 className="text-5xl font-bold text-white mb-8">Seamless UI integration</h1>
+    <div className="flex flex-col h-full">
+      <div className="flex items-center gap-4 px-8 py-6 border-b border-[#242424]">
+        <h1 className="text-3xl font-bold text-white">Seamless UI integration</h1>
+      </div>
+
+      <div className="flex-1 p-8">
       <div className="grid grid-cols-2 gap-8 flex-1">
         <div className="flex flex-col">
           <h3 className="text-xl font-semibold text-white mb-4">Backend</h3>
@@ -85,6 +89,7 @@ export function SlideUIIntegration() {
             </pre>
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

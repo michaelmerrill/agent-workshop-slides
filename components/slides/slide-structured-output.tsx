@@ -1,7 +1,11 @@
 export function SlideStructuredOutput() {
   return (
-    <div className="flex flex-col h-full p-8">
-      <h1 className="text-5xl font-bold text-white mb-8">Structured output</h1>
+    <div className="flex flex-col h-full">
+      <div className="flex items-center gap-4 px-8 py-6 border-b border-[#242424]">
+        <h1 className="text-3xl font-bold text-white">Structured output</h1>
+      </div>
+
+      <div className="flex-1 p-8">
 
       <div className="flex w-full flex-1">
         <div className="flex flex-col w-full">
@@ -87,6 +91,7 @@ export function SlideStructuredOutput() {
             </pre>
           </div>
         </div>
+      </div>
       </div>
     </div>
   )
