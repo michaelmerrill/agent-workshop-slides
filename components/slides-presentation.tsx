@@ -86,7 +86,6 @@ export function SlidesPresentation() {
   const renderSlide = () => {
     const getBackgroundImage = () => {
       if (currentSlide === 0) return "/title.svg";
-      if (currentSlide === 5) return "/agent-maturity.svg";
       return "/blank.svg";
     };
 
