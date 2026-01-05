@@ -2,9 +2,15 @@ import type { ReactNode } from "react";
 
 interface BackgroundProps {
   children: ReactNode;
+  slideNumber?: number;
+  totalSlides?: number;
 }
 
-export function Background({ children }: BackgroundProps) {
+export function Background({
+  children,
+  slideNumber,
+  totalSlides,
+}: BackgroundProps) {
   return (
     <div className="w-full h-full bg-black relative">
       {/* left border - full height */}
@@ -65,6 +71,19 @@ export function Background({ children }: BackgroundProps) {
           ></path>
         </svg>
       </div>
+
+      {/* slide counter - inside bottom right */}
+      {slideNumber && totalSlides && (
+        <div
+          className="absolute font-mono text-xs text-[#666]"
+          style={{
+            bottom: "4%",
+            right: "9%",
+          }}
+        >
+          {slideNumber}/{totalSlides}
+        </div>
+      )}
     </div>
   );
 }

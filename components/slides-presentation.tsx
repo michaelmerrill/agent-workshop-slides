@@ -90,23 +90,7 @@ export function SlidesPresentation() {
         ref={slideContainerRef}
         className="w-full aspect-[16/9] relative"
       >
-        <Background>{slides[currentSlide].content}</Background>
-
-        {isFullscreen && slides.length > 1 && (
-          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
-            <div className="flex gap-1.5">
-              {slides.map((_, index) => (
-                <button
-                  key={index} // Added key property
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentSlide ? "bg-white" : "bg-white/40"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        <Background slideNumber={currentSlide + 1} totalSlides={slides.length}>{slides[currentSlide].content}</Background>
       </div>
     );
 
@@ -132,12 +116,9 @@ export function SlidesPresentation() {
             </div>
           </div>
 
-          {/* Browser Menu Button */}
-          <div className="w-6 h-6 flex items-center justify-center">
-            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
-            <div className="w-1 h-1 bg-gray-500 rounded-full mx-1"></div>
-            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
-          </div>
+          <button onClick={enterFullscreen} className="text-gray-400 hover:text-white transition-colors">
+            <Maximize className="w-4 h-4" />
+          </button>
         </div>
 
         {/* Slide Content */}
@@ -157,23 +138,9 @@ export function SlidesPresentation() {
   }
 
   return (
-    <div className="p-8 font-sans bg-black min-h-screen">
-      {/* Header Controls */}
-      <div className="max-w-7xl mx-auto mb-6 flex items-center justify-between font-sans">
-        <div className="flex items-center gap-4 font-sans"></div>
-        <div className="flex items-center gap-4 font-sans">
-          <span className="text-sm text-gray-300 font-sans">
-            {currentSlide + 1} / {slides.length}
-          </span>
-          <Button onClick={enterFullscreen} size="sm">
-            <Maximize className="w-4 h-4 mr-2" />
-            Fullscreen
-          </Button>
-        </div>
-      </div>
-
+    <div className="p-8 font-sans bg-black min-h-screen flex items-center justify-center">
       {/* Slide Container - Preview Mode */}
-      <div className="max-w-7xl mx-auto rounded-lg overflow-hidden font-sans">
+      <div className="w-full max-w-7xl rounded-lg overflow-hidden font-sans">
         {renderSlide()}
       </div>
 
