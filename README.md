@@ -1,30 +1,32 @@
-# Vercel Slides Builder
+# Build an Agent with Vercel
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+![Build an Agent with Vercel](/public/og.png)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/vercel/v0-vercel-slides-builder-u1)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/13R4lmNxEZ4)
+Slide deck for the "Build an Agent with Vercel" webinar.
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.
 
-## Deployment
+### Topics
 
-Your project is live at:
+- What is an agent?
+- Why build an agent?
+- AI SDK v6
+  - Structured output
+  - Tool calling
+  - UI integration
+- How to build an agent
+- How to deploy an agent
 
-**[https://vercel.com/vercel/v0-vercel-slides-builder-u1](https://vercel.com/vercel/v0-vercel-slides-builder-u1)**
+## Development
 
-## Build your app
+```bash
+pnpm install
+pnpm dev
+```
 
-Continue building your app on:
+## Controls
 
-**[https://v0.app/chat/13R4lmNxEZ4](https://v0.app/chat/13R4lmNxEZ4)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **Arrow keys** - navigate slides
+- **F** - toggle fullscreen
