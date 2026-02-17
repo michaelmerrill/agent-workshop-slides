@@ -5,8 +5,22 @@ import type React from "react";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Agent Webinar Slides",
-  description: "Build an Agent with Vercel",
+  title: "Build an Agent with Vercel",
+  description:
+    "Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.",
+  openGraph: {
+    title: "Build an Agent with Vercel",
+    description:
+      "Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.",
+    images: ["/og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Build an Agent with Vercel",
+    description:
+      "Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.",
+    images: ["/og.png"],
+  },
 };
 
 export const viewport: Viewport = {
