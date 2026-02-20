@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Background } from '@/components/background';
+import { Background } from "@/components/background";
 
 export default function ComposableArchitectureSlide() {
   return (
@@ -26,62 +26,66 @@ export default function ComposableArchitectureSlide() {
 
             {/* right column - code block */}
             <div className="rounded-lg border border-[#242424] bg-black/40 p-8">
-                <pre className="overflow-auto text-base leading-relaxed">
-                  <code>
-                    <span className="text-[#9ca3af]">// compose multiple agents</span>
-                    {"\n"}
-                    <span className="text-[#f75f8f]">const</span>{" "}
-                    <span className="text-white">orchestrator</span>{" "}
-                    <span className="text-[#f75f8f]">=</span>{" "}
-                    <span className="text-[#f75f8f]">new</span>{" "}
-                    <span className="text-[#52a8ff]">Orchestrator</span>
-                    <span className="text-[#d4d4d4]">({"{"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">agents</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">researcher</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">writer</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">reviewer</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-[#d4d4d4]">{"}"}</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">memory</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#f75f8f]">new</span>{" "}
-                    <span className="text-[#52a8ff]">SharedMemory</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    <span className="text-[#d4d4d4]">{"});"}</span>
-                    {"\n"}
-                    {"\n"}
-                    <span className="text-[#9ca3af]">// agents share context</span>
-                    {"\n"}
-                    <span className="text-[#f75f8f]">const</span>{" "}
-                    <span className="text-white">result</span>{" "}
-                    <span className="text-[#f75f8f]">=</span>{" "}
-                    <span className="text-[#f75f8f]">await</span>{" "}
-                    <span className="text-white">orchestrator</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">run</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-white">task</span>
-                    <span className="text-[#d4d4d4]">);</span>
-                  </code>
-                </pre>
+              <pre className="overflow-auto text-base leading-relaxed">
+                <code>
+                  <span className="text-[#9ca3af]">
+                    // create custom agent implementation
+                  </span>
+                  {"\n"}
+                  <span className="text-[#f75f8f]">const</span>{" "}
+                  <span className="text-white">orchestrator</span>{" "}
+                  <span className="text-[#f75f8f]">=</span>{" "}
+                  <span className="text-[#f75f8f]">new</span>{" "}
+                  <span className="text-[#52a8ff]">Orchestrator</span>
+                  <span className="text-[#d4d4d4]">({"{"}</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-white">agents</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-[#d4d4d4]">{"{"}</span>
+                  {"\n"}
+                  {"    "}
+                  <span className="text-white">researcher</span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  {"    "}
+                  <span className="text-white">writer</span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  {"    "}
+                  <span className="text-white">reviewer</span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-[#d4d4d4]">{"}"}</span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-white">memory</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-[#f75f8f]">new</span>{" "}
+                  <span className="text-[#52a8ff]">SharedMemory</span>
+                  <span className="text-[#d4d4d4]">(),</span>
+                  {"\n"}
+                  <span className="text-[#d4d4d4]">{"});"}</span>
+                  {"\n"}
+                  {"\n"}
+                  <span className="text-[#9ca3af]">
+                    // agent implements Agent interface
+                  </span>
+                  {"\n"}
+                  <span className="text-[#f75f8f]">const</span>{" "}
+                  <span className="text-white">result</span>{" "}
+                  <span className="text-[#f75f8f]">=</span>{" "}
+                  <span className="text-[#f75f8f]">await</span>{" "}
+                  <span className="text-white">orchestrator</span>
+                  <span className="text-[#d4d4d4]">.</span>
+                  <span className="text-[#c472fb]">generate</span>
+                  <span className="text-[#d4d4d4]">(</span>
+                  <span className="text-white">task</span>
+                  <span className="text-[#d4d4d4]">);</span>
+                </code>
+              </pre>
             </div>
           </div>
         </div>
