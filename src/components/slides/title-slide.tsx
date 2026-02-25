@@ -32,16 +32,16 @@ export default function TitleSlide() {
           className="group mt-16 flex items-center gap-4"
         >
           <Image
-            src="/headshot.png"
-            alt="Will Sather"
+            src="/headshot.jpeg"
+            alt="Michael Merrill"
             width={56}
             height={56}
             className="aspect-square rounded-full object-cover"
           />
           <div className="flex items-baseline gap-3 border-transparent border-b pb-1 group-hover:border-dotted group-hover:border-zinc-500">
-            <span className="font-medium text-2xl text-white">Will Sather</span>
+            <span className="font-medium text-2xl text-white">Michael Merrill</span>
             <span className="font-mono text-base text-[#a0a0a0]">
-              Field Engineer
+              Solution Architect
             </span>
           </div>
         </a>
