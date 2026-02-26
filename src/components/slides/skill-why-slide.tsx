@@ -19,21 +19,21 @@ const comparisons = [
 
 const patterns = [
   {
-    title: 'Enforce Standards',
+    title: 'Code Generation Templates',
     description:
-      'Encode your engineering standards so the agent enforces them automatically on every review.',
+      'Enforce how new components, services, and tests are scaffolded. Every generated file matches your team\'s conventions automatically.',
     color: '#62c073',
   },
   {
-    title: 'Automate Pipelines',
+    title: 'Refactoring & Transformation',
     description:
-      'Wrap multi-step operations into a single repeatable command that returns structured output.',
+      'Encode migration rules — class components to hooks, API upgrades, new error handling patterns. The skill captures what "done right" looks like.',
     color: '#52a8ff',
   },
   {
-    title: 'Protect Systems',
+    title: 'Project-Specific Context',
     description:
-      'Validate against your design tokens before allowing changes. Suggest the nearest approved option on failure.',
+      'Give the AI knowledge it can\'t infer: which internal libraries to prefer, naming conventions, architecture decisions. A living contributor guide the AI actually reads.',
     color: '#c472fb',
   },
 ];
