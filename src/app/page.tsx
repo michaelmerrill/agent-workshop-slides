@@ -22,6 +22,7 @@ import SkillDefinitionSlide from "@/components/slides/skill-definition-slide";
 import SkillWhySlide from "@/components/slides/skill-why-slide";
 import SkillHowBuildSlide from "@/components/slides/skill-how-build-slide";
 import SkillDeploySlide from "@/components/slides/skill-deploy-slide";
+import SkillDiscoverSlide from "@/components/slides/skill-discover-slide";
 import QASlide from "@/components/slides/qa-slide";
 
 const slides = [
@@ -44,6 +45,7 @@ const slides = [
   { component: SkillWhySlide, title: "Why build a Skill" },
   { component: SkillHowBuildSlide, title: "How to build a Skill" },
   { component: SkillDeploySlide, title: "How to deploy a Skill" },
+  { component: SkillDiscoverSlide, title: "Discover Skills" },
   { component: QASlide, title: "Q&A" },
 ];
 
