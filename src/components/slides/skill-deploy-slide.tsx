@@ -8,7 +8,7 @@ const steps = [
     label: 'Publish',
     color: '#62c073',
     description:
-      'Push your skill folder to a public GitHub repo -- that\'s it. It\'s live.',
+      'Push your skill folder to a GitHub repo -- public or private. That\'s it. It\'s live.',
     code: (
       <>
         <span className="text-[#9ca3af]">{'# push to GitHub'}</span>
