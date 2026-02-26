@@ -4,8 +4,8 @@ import { Background } from '@/components/background';
 
 const comparisons = [
   {
-    before: 'Pasting prompts every session',
-    after: 'Install capabilities like packages',
+    before: 'AI forgets your standards every session',
+    after: 'Encode your best practices permanently',
   },
   {
     before: 'Knowledge dies when the tab closes',
@@ -14,6 +14,10 @@ const comparisons = [
   {
     before: 'Only one developer has the context',
     after: 'Share via Git, whole team benefits',
+  },
+  {
+    before: 'AI produces inconsistent output quality',
+    after: 'Every run meets the same high bar',
   },
 ];
 
@@ -50,11 +54,11 @@ export default function SkillWhySlide() {
         {/* top section: before / after comparisons */}
         <div className="border-[#242424] border-b">
           {/* before row */}
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-4">
             {comparisons.map((item, i) => (
               <div
                 key={`before-${i}`}
-                className={`px-8 pt-6 pb-4 ${i < 2 ? 'border-[#242424] border-r' : ''}`}
+                className={`px-8 pt-6 pb-4 ${i < 3 ? 'border-[#242424] border-r' : ''}`}
               >
                 <span className="font-mono text-xs tracking-wider text-[#666] uppercase">
                   Before
@@ -67,11 +71,11 @@ export default function SkillWhySlide() {
           </div>
 
           {/* arrow indicator row */}
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-4">
             {comparisons.map((_, i) => (
               <div
                 key={`arrow-${i}`}
-                className={`flex items-center px-8 py-1 ${i < 2 ? 'border-[#242424] border-r' : ''}`}
+                className={`flex items-center px-8 py-1 ${i < 3 ? 'border-[#242424] border-r' : ''}`}
               >
                 <svg
                   width="16"
@@ -95,11 +99,11 @@ export default function SkillWhySlide() {
           </div>
 
           {/* after row */}
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-4">
             {comparisons.map((item, i) => (
               <div
                 key={`after-${i}`}
-                className={`px-8 pt-2 pb-6 ${i < 2 ? 'border-[#242424] border-r' : ''}`}
+                className={`px-8 pt-2 pb-6 ${i < 3 ? 'border-[#242424] border-r' : ''}`}
               >
                 <span className="font-mono text-xs tracking-wider text-white uppercase">
                   After
