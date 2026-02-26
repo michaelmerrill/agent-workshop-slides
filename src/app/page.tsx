@@ -18,6 +18,10 @@ import ComposableArchitectureSlide from "@/components/slides/composable-architec
 import UIIntegrationSlide from "@/components/slides/ui-integration-slide";
 import ToolApprovalSlide from "@/components/slides/tool-approval-slide";
 import DemoSlide from "@/components/slides/demo-slide";
+import SkillDefinitionSlide from "@/components/slides/skill-definition-slide";
+import SkillWhySlide from "@/components/slides/skill-why-slide";
+import SkillHowBuildSlide from "@/components/slides/skill-how-build-slide";
+import SkillDeploySlide from "@/components/slides/skill-deploy-slide";
 import QASlide from "@/components/slides/qa-slide";
 
 const slides = [
@@ -36,6 +40,10 @@ const slides = [
   { component: UIIntegrationSlide, title: "UI Integration" },
   { component: ToolApprovalSlide, title: "Tool Approval" },
   { component: DemoSlide, title: "Demo" },
+  { component: SkillDefinitionSlide, title: "What is a Skill" },
+  { component: SkillWhySlide, title: "Why build a Skill" },
+  { component: SkillHowBuildSlide, title: "How to build a Skill" },
+  { component: SkillDeploySlide, title: "How to deploy a Skill" },
   { component: QASlide, title: "Q&A" },
 ];
 
