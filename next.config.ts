@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  serverExternalPackages: ["just-bash"],
 };
 
 const toolbarConfig = withVercelToolbar()(nextConfig);
