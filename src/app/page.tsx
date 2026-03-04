@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Maximize } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import TitleSlide from "@/components/slides/title-slide";
+import PollSlide from "@/components/slides/poll-slide";
 import AgendaSlide from "@/components/slides/agenda-slide";
 import AiCloudPrimitivesSlide from "@/components/slides/ai-cloud-primitives-slide";
 import AiSdkSlide from "@/components/slides/ai-sdk-slide";
@@ -11,7 +12,6 @@ import AgentDefinitionSlide from "@/components/slides/agent-definition-slide";
 import AgentDiagramSlide from "@/components/slides/agent-diagram-slide";
 import AgentPerspectivesSlide from "@/components/slides/agent-perspectives-slide";
 import AgentMaturitySlide from "@/components/slides/agent-maturity-slide";
-import LLMInteractionsSlide from "@/components/slides/llm-interactions-slide";
 import StructuredOutputSlide from "@/components/slides/structured-output-slide";
 import AgentAbstractionSlide from "@/components/slides/agent-abstraction-slide";
 import ComposableArchitectureSlide from "@/components/slides/composable-architecture-slide";
@@ -28,6 +28,7 @@ import QASlide from "@/components/slides/qa-slide";
 
 const slides = [
   { component: TitleSlide, title: "Title" },
+  { component: PollSlide, title: "Quick Poll" },
   { component: AgendaSlide, title: "Agenda" },
   { component: AgentDefinitionSlide, title: "Agent Definition" },
   { component: AgentDiagramSlide, title: "Agent Diagram" },
@@ -35,8 +36,7 @@ const slides = [
   { component: AgentMaturitySlide, title: "Agent Maturity" },
   { component: AiCloudPrimitivesSlide, title: "AI Cloud Primitives" },
   { component: AiSdkSlide, title: "AI SDK" },
-  { component: LLMInteractionsSlide, title: "LLM Interactions" },
-  { component: StructuredOutputSlide, title: "Structured Output" },
+{ component: StructuredOutputSlide, title: "Structured Output" },
   { component: AgentAbstractionSlide, title: "Agent Abstraction" },
   { component: ComposableArchitectureSlide, title: "Composable Architecture" },
   { component: UIIntegrationSlide, title: "UI Integration" },

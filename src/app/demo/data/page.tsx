@@ -35,7 +35,7 @@ export default function DataAgentPage() {
         </a>
         <span className="mx-2">•</span>
         <a
-          href="https://github.com/vercel-saleseng/demo/tree/main/apps/data-agent"
+          href="https://github.com/michaelmerrill/agent-workshop-slides/tree/main/src/app/demo/data"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 hover:underline"

@@ -36,37 +36,42 @@ export default function DemoSlide() {
         </div>
 
         {/* three-column card layout */}
-        <div className="grid flex-1 grid-cols-3">
-          {demos.map((demo, i) => (
-            <a
-              key={demo.number}
-              href={demo.path}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex flex-col px-8 py-8 transition-colors hover:bg-white/5${
-                i < demos.length - 1 ? ' border-[#242424] border-r' : ''
-              }`}
-            >
-              {/* colored accent line */}
-              <div
-                className="mb-6 h-1 w-12 rounded-full"
-                style={{ backgroundColor: demo.color }}
-              />
+        <div className="flex flex-1 items-center px-8">
+          <div className="grid w-full grid-cols-3 gap-6">
+            {demos.map((demo) => (
+              <a
+                key={demo.number}
+                href={demo.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col rounded-lg border border-white/10 bg-white/5 px-10 py-10 transition-colors hover:border-white/20 hover:bg-white/10"
+              >
+                {/* colored accent line */}
+                <div
+                  className="mb-6 h-1.5 w-16 rounded-full"
+                  style={{ backgroundColor: demo.color }}
+                />
 
-              {/* numbered badge */}
-              <span className="mb-3 font-mono text-sm text-[#888]">
-                {demo.number}
-              </span>
+                {/* numbered badge */}
+                <span className="mb-3 font-mono text-sm text-[#888]">
+                  {demo.number}
+                </span>
 
-              {/* agent name */}
-              <h2 className="font-bold text-xl text-white">{demo.name}</h2>
+                {/* agent name */}
+                <h2 className="font-bold text-2xl text-white">{demo.name}</h2>
 
-              {/* description */}
-              <p className="mt-2 text-base text-[#a0a0a0]">
-                {demo.description}
-              </p>
-            </a>
-          ))}
+                {/* description */}
+                <p className="mt-2 text-lg text-[#a0a0a0]">
+                  {demo.description}
+                </p>
+
+                {/* CTA */}
+                <span className="mt-auto pt-6 text-sm text-[#888]">
+                  Open Demo →
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </Background>

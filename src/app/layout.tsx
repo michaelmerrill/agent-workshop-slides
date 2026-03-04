@@ -2,9 +2,15 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type React from "react";
 
+import ConvexClientProvider from "@/components/convex-provider";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"
+  ),
   title: "Build an Agent with Vercel",
   description:
     "Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.",
@@ -12,14 +18,12 @@ export const metadata: Metadata = {
     title: "Build an Agent with Vercel",
     description:
       "Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.",
-    images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Build an Agent with Vercel",
     description:
       "Learn how to go from idea to deployed agent in under an hour using AI SDK, Next.js, and Vercel.",
-    images: ["/og.png"],
   },
 };
 
@@ -50,7 +54,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-black text-white antialiased`}
       >
-        {children}
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );

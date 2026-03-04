@@ -12,220 +12,113 @@ export default function StructuredOutputSlide() {
 
         <div className="flex-1 p-8">
           <div className="grid h-full grid-cols-2 gap-8">
-            <div className="flex flex-col">
-              <h3 className="mb-4 font-semibold text-xl text-white">
-                Individual LLM Interactions
+            {/* left column - explanatory text */}
+            <div className="flex flex-col rounded-lg border border-white/10 bg-white/5 p-8">
+              <h3 className="mb-6 font-semibold text-xl text-white">
+                Why Structured Output?
               </h3>
-              <div className="flex-1 rounded-lg border border-[#242424] bg-black/40 p-8">
-                <pre className="overflow-auto text-base leading-relaxed">
-                  <code>
-                    <span className="text-[#9ca3af]">// step 1: call tool</span>
-                    {"\n"}
-                    <span className="text-[#f75f8f]">const</span>{" "}
-                    <span className="text-white">toolResult</span>{" "}
-                    <span className="text-[#f75f8f]">=</span>{" "}
-                    <span className="text-[#f75f8f]">await</span>{" "}
-                    <span className="text-[#c472fb]">generateText</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">model</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#62c073]">
-                      "anthropic/claude-sonnet-4.5"
-                    </span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">tools</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#d4d4d4]">{"{"}</span>{" "}
-                    <span className="text-white">weather</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">weatherTool</span>{" "}
-                    <span className="text-[#d4d4d4]">{"}"}</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">prompt</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#62c073]">'Get weather for SF'</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    <span className="text-[#d4d4d4]">{"});"}</span>
-                    {"\n"}
-                    {"\n"}
-                    <span className="text-[#9ca3af]">
-                      // step 2: generate structured output
-                    </span>
-                    {"\n"}
-                    <span className="text-[#f75f8f]">const</span>{" "}
-                    <span className="text-white">structured</span>{" "}
-                    <span className="text-[#f75f8f]">=</span>{" "}
-                    <span className="text-[#f75f8f]">await</span>{" "}
-                    <span className="text-[#c472fb]">generateObject</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">model</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#62c073]">
-                      "anthropic/claude-sonnet-4.5"
-                    </span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">schema</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">object</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">summary</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">string</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">temperature</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">number</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">recommendation</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">string</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-[#d4d4d4]">{"}),"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">prompt</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#62c073]">`Summarize: </span>
-                    <span className="text-[#c472fb]">$</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    <span className="text-white">toolResult</span>
-                    <span className="text-[#d4d4d4]">{"}"}</span>
-                    <span className="text-[#62c073]">`</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    <span className="text-[#d4d4d4]">{"});"}</span>
-                  </code>
-                </pre>
+              <div className="space-y-4 text-lg text-[#a0a0a0]">
+                <p>Guarantees the shape of LLM responses using a Zod schema</p>
+                <p>Type-safe results — no parsing or validation needed</p>
+                <p>Combine tools and structured output in a single call</p>
+                <p>The model calls tools, then formats the final answer to match your schema</p>
               </div>
             </div>
-            <div className="flex flex-col">
-              <h3 className="mb-4 font-semibold text-xl text-white">
-                Unified Agent Output
-              </h3>
-              <div className="flex-1 rounded-lg border border-[#242424] bg-black/40 p-8">
-                <pre className="overflow-auto text-base leading-relaxed">
-                  <code>
-                    <span className="text-[#9ca3af]">// all in one call!</span>
-                    {"\n"}
-                    <span className="text-[#f75f8f]">const</span>{" "}
-                    <span className="text-white">result</span>{" "}
-                    <span className="text-[#f75f8f]">=</span>{" "}
-                    <span className="text-[#f75f8f]">await</span>{" "}
-                    <span className="text-[#c472fb]">generateText</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">model</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#62c073]">
-                      "anthropic/claude-sonnet-4.5"
-                    </span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">tools</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#d4d4d4]">{"{"}</span>{" "}
-                    <span className="text-white">weather</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">weatherTool</span>{" "}
-                    <span className="text-[#d4d4d4]">{"}"}</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">output</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#52a8ff]">Output</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">object</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-white">schema</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">object</span>
-                    <span className="text-[#d4d4d4]">(</span>
-                    <span className="text-[#d4d4d4]">{"{"}</span>
-                    {"\n"}
-                    {"      "}
-                    <span className="text-white">summary</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">string</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    {"      "}
-                    <span className="text-white">temperature</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">number</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    {"      "}
-                    <span className="text-white">recommendation</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-white">z</span>
-                    <span className="text-[#d4d4d4]">.</span>
-                    <span className="text-[#c472fb]">string</span>
-                    <span className="text-[#d4d4d4]">(),</span>
-                    {"\n"}
-                    {"    "}
-                    <span className="text-[#d4d4d4]">{"}),"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-[#d4d4d4]">{"}),"}</span>
-                    {"\n"}
-                    {"  "}
-                    <span className="text-white">prompt</span>
-                    <span className="text-[#f75f8f]">:</span>{" "}
-                    <span className="text-[#62c073]">'Get weather for SF'</span>
-                    <span className="text-[#d4d4d4]">,</span>
-                    {"\n"}
-                    <span className="text-[#d4d4d4]">{"});"}</span>
-                    {"\n"}
-                    {"\n"}
-                    <span className="text-[#9ca3af]">
-                      // result.output contains typed data
-                    </span>
-                  </code>
-                </pre>
-              </div>
+
+            {/* right column - code block */}
+            <div className="rounded-lg border border-[#242424] bg-black/40 p-8">
+              <pre className="overflow-auto text-base leading-relaxed">
+                <code>
+                  <span className="text-[#9ca3af]">// tools + structured output in one call</span>
+                  {"\n"}
+                  <span className="text-[#f75f8f]">const</span>{" "}
+                  <span className="text-white">result</span>{" "}
+                  <span className="text-[#f75f8f]">=</span>{" "}
+                  <span className="text-[#f75f8f]">await</span>{" "}
+                  <span className="text-[#c472fb]">generateText</span>
+                  <span className="text-[#d4d4d4]">(</span>
+                  <span className="text-[#d4d4d4]">{"{"}</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-white">model</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-[#62c073]">
+                    "anthropic/claude-sonnet-4.5"
+                  </span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-white">tools</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-[#d4d4d4]">{"{"}</span>{" "}
+                  <span className="text-white">weather</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-white">weatherTool</span>{" "}
+                  <span className="text-[#d4d4d4]">{"}"}</span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-white">output</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-[#52a8ff]">Output</span>
+                  <span className="text-[#d4d4d4]">.</span>
+                  <span className="text-[#c472fb]">object</span>
+                  <span className="text-[#d4d4d4]">(</span>
+                  <span className="text-[#d4d4d4]">{"{"}</span>
+                  {"\n"}
+                  {"    "}
+                  <span className="text-white">schema</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-white">z</span>
+                  <span className="text-[#d4d4d4]">.</span>
+                  <span className="text-[#c472fb]">object</span>
+                  <span className="text-[#d4d4d4]">(</span>
+                  <span className="text-[#d4d4d4]">{"{"}</span>
+                  {"\n"}
+                  {"      "}
+                  <span className="text-white">summary</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-white">z</span>
+                  <span className="text-[#d4d4d4]">.</span>
+                  <span className="text-[#c472fb]">string</span>
+                  <span className="text-[#d4d4d4]">(),</span>
+                  {"\n"}
+                  {"      "}
+                  <span className="text-white">temperature</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-white">z</span>
+                  <span className="text-[#d4d4d4]">.</span>
+                  <span className="text-[#c472fb]">number</span>
+                  <span className="text-[#d4d4d4]">(),</span>
+                  {"\n"}
+                  {"      "}
+                  <span className="text-white">recommendation</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-white">z</span>
+                  <span className="text-[#d4d4d4]">.</span>
+                  <span className="text-[#c472fb]">string</span>
+                  <span className="text-[#d4d4d4]">(),</span>
+                  {"\n"}
+                  {"    "}
+                  <span className="text-[#d4d4d4]">{"}),"}</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-[#d4d4d4]">{"}),"}</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-white">prompt</span>
+                  <span className="text-[#f75f8f]">:</span>{" "}
+                  <span className="text-[#62c073]">'Get weather for SF'</span>
+                  <span className="text-[#d4d4d4]">,</span>
+                  {"\n"}
+                  <span className="text-[#d4d4d4]">{"});"}</span>
+                  {"\n"}
+                  {"\n"}
+                  <span className="text-[#9ca3af]">
+                    // result.output contains typed data
+                  </span>
+                </code>
+              </pre>
             </div>
           </div>
         </div>
