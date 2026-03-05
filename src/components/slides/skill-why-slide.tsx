@@ -36,7 +36,7 @@ export default function SkillWhySlide() {
         {/* header */}
         <div className="border-[#242424] border-b px-8 py-5">
           <h1 className="font-bold text-3xl text-white">
-            Why build a Skill?
+            Why build a skill?
           </h1>
         </div>
 

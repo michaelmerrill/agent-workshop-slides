@@ -58,7 +58,7 @@ export default function SkillDeploySlide() {
         {/* header */}
         <div className="flex items-center gap-4 border-[#242424] border-b px-8 py-5">
           <h1 className="font-bold text-3xl text-white">
-            How to deploy a Skill
+            How to deploy a skill
           </h1>
           <span className="ml-auto rounded-full border border-[#333] bg-[#0a0a0a] px-4 py-1 font-mono text-sm text-[#a0a0a0]">
             Ship it like any other open source tool

@@ -47,7 +47,7 @@ export default function SkillHowBuildSlide() {
         {/* header */}
         <div className="flex items-center gap-4 border-[#242424] border-b px-8 py-5">
           <h1 className="font-bold text-3xl text-white">
-            How to build a Skill
+            How to build a skill
           </h1>
         </div>
 

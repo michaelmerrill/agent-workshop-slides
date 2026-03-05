@@ -39,7 +39,7 @@ export default function AgentSetupSlide() {
         {/* header */}
         <div className="flex items-center gap-4 border-[#242424] border-b px-8 py-6">
           <h1 className="font-bold text-3xl text-white">
-            Hands On: Set Up Your Agent
+            Hands on: set up your agent
           </h1>
         </div>
 

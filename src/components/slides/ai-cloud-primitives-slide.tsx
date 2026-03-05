@@ -14,7 +14,7 @@ export default function AiCloudPrimitivesSlide() {
         <div className="flex items-center gap-4 border-[#242424] border-b px-8 py-6">
           <Sparkles size={24} className="text-white" />
           <h1 className="font-bold text-3xl text-white">
-            AI Cloud primitives
+            AI cloud primitives
           </h1>
         </div>
 

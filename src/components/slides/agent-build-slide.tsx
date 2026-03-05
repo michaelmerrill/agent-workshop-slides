@@ -47,7 +47,7 @@ export default function AgentBuildSlide() {
         {/* header */}
         <div className="flex items-center gap-4 border-[#242424] border-b px-8 py-6">
           <h1 className="font-bold text-3xl text-white">
-            Hands On: Build With Your Agent
+            Hands on: build with your agent
           </h1>
         </div>
 

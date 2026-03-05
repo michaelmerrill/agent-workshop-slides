@@ -7,7 +7,7 @@ export default function StructuredOutputSlide() {
     <Background>
       <div className="flex h-full flex-col">
         <div className="flex items-center gap-4 border-[#242424] border-b px-8 py-6">
-          <h1 className="font-bold text-3xl text-white">Structured Output</h1>
+          <h1 className="font-bold text-3xl text-white">Structured output</h1>
         </div>
 
         <div className="flex-1 p-8">

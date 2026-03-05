@@ -8,7 +8,7 @@ export default function SkillDefinitionSlide() {
       <div className="flex h-full flex-col">
         {/* header */}
         <div className="border-[#242424] border-b px-8 py-6">
-          <h1 className="font-bold text-3xl text-white">What is a Skill?</h1>
+          <h1 className="font-bold text-3xl text-white">What is a skill?</h1>
         </div>
 
         <div className="flex flex-1">
