@@ -1,23 +1,25 @@
 import { query, mutation } from "./_generated/server";
 import { v } from "convex/values";
 
-const OPTIONS = [
-  "New to AI",
-  "Used AI tools",
-  "Built AI apps",
-  "Built AI agents",
-] as const;
+const POLL_OPTIONS: Record<string, readonly string[]> = {
+  "workshop-2026-03": ["New to AI", "Used AI tools", "Built AI apps", "Built AI agents"],
+  "workshop-cc-experience": ["Never used it", "Tried it once or twice", "Use it regularly", "Power user"],
+  "workshop-skills-experience": ["What are skills?", "Heard of them", "Used a few skills", "Built my own"],
+};
 
 export const getResults = query({
   args: { pollId: v.string() },
   handler: async (ctx, { pollId }) => {
+    const options = POLL_OPTIONS[pollId];
+    if (!options) throw new Error(`Unknown pollId: ${pollId}`);
+
     const votes = await ctx.db
       .query("votes")
       .withIndex("by_poll", (q) => q.eq("pollId", pollId))
       .collect();
 
     const counts: Record<string, number> = {};
-    for (const option of OPTIONS) {
+    for (const option of options) {
       counts[option] = 0;
     }
     for (const vote of votes) {
@@ -27,7 +29,7 @@ export const getResults = query({
     }
 
     return {
-      options: OPTIONS as unknown as string[],
+      options: options as unknown as string[],
       counts,
       total: votes.length,
     };
@@ -37,7 +39,9 @@ export const getResults = query({
 export const castVote = mutation({
   args: { pollId: v.string(), option: v.string(), voterId: v.string() },
   handler: async (ctx, { pollId, option, voterId }) => {
-    if (!OPTIONS.includes(option as (typeof OPTIONS)[number])) {
+    const options = POLL_OPTIONS[pollId];
+    if (!options) throw new Error(`Unknown pollId: ${pollId}`);
+    if (!options.includes(option)) {
       throw new Error(`Invalid option: ${option}`);
     }
     const existing = await ctx.db

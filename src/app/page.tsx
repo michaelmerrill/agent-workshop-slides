@@ -5,6 +5,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import TitleSlide from "@/components/slides/title-slide";
 import PollSlide from "@/components/slides/poll-slide";
+import CcExperiencePollSlide from "@/components/slides/cc-experience-poll-slide";
+import SkillsExperiencePollSlide from "@/components/slides/skills-experience-poll-slide";
 import AgendaSlide from "@/components/slides/agenda-slide";
 import AiCloudPrimitivesSlide from "@/components/slides/ai-cloud-primitives-slide";
 import AiSdkSlide from "@/components/slides/ai-sdk-slide";
@@ -32,6 +34,8 @@ import QASlide from "@/components/slides/qa-slide";
 const slides = [
   { component: TitleSlide, title: "Title" },
   { component: PollSlide, title: "Quick Poll" },
+  { component: CcExperiencePollSlide, title: "Claude Code Poll" },
+  { component: SkillsExperiencePollSlide, title: "Skills Poll" },
   { component: AgendaSlide, title: "Agenda" },
   { component: AgentDefinitionSlide, title: "Agent Definition" },
   { component: AgentDiagramSlide, title: "Agent Diagram" },
