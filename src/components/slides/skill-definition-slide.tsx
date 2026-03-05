@@ -13,12 +13,12 @@ export default function SkillDefinitionSlide() {
 
         <div className="flex flex-1">
           {/* left: definition */}
-          <div className="flex flex-1 flex-col border-[#242424] border-r">
-            <div className="px-8 py-8">
+          <div className="flex flex-1 flex-col justify-center border-[#242424] border-r">
+            <div className="px-8 py-12">
               <p className="mb-8 max-w-xl text-2xl text-white leading-relaxed">
                 A skill is a folder that gives agents knowledge and capabilities.
               </p>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <span className="mt-0.5 shrink-0 rounded border border-[#333] bg-[#0a0a0a] px-3 py-1 font-mono text-sm text-[#62c073]">
                     SKILL.md

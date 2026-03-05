@@ -2,43 +2,30 @@
 
 import { Background } from '@/components/background';
 
-const comparisons = [
+const benefits = [
   {
-    before: 'AI forgets your standards every session',
-    after: 'Encode your best practices permanently',
-  },
-  {
-    before: 'Knowledge dies when the tab closes',
-    after: 'Write once, deploy forever',
-  },
-  {
-    before: 'Only one developer has the context',
-    after: 'Share via Git, whole team benefits',
-  },
-  {
-    before: 'AI produces inconsistent output quality',
-    after: 'Every run meets the same high bar',
-  },
-];
-
-const patterns = [
-  {
-    title: 'Code Generation Templates',
+    title: 'Task-specific performance',
     description:
-      "Enforce how new components, services, and tests are scaffolded. Every generated file matches your team's conventions automatically.",
+      'Specialized capabilities for document creation, data analysis, and domain-specific work that supplements Claude\'s general knowledge.',
     color: '#62c073',
   },
   {
-    title: 'Refactoring & Transformation',
+    title: 'Organizational knowledge capture',
     description:
-      'Encode migration rules — class components to hooks, API upgrades, new error handling patterns. The skill captures what "done right" looks like.',
+      'Package your company\'s workflows, best practices, and institutional knowledge for Claude to use consistently across your team.',
     color: '#52a8ff',
   },
   {
-    title: 'Project-Specific Context',
+    title: 'Easy customization',
     description:
-      "Give the AI knowledge it can't infer: which internal libraries to prefer, naming conventions, architecture decisions. A living contributor guide the AI actually reads.",
+      'Write instructions in Markdown — no coding required. Attach executable scripts for more advanced functionality.',
     color: '#c472fb',
+  },
+  {
+    title: 'Centralized management',
+    description:
+      'Provision skills organization-wide, ensuring consistent workflows across teams without individual setup.',
+    color: '#ffffff',
   },
 ];
 
@@ -53,90 +40,28 @@ export default function SkillWhySlide() {
           </h1>
         </div>
 
-        {/* main content area - uses flex-1 to fill remaining space */}
-        <div className="flex flex-1 flex-col">
-          {/* top section: before / after comparisons */}
-          <div className="flex flex-1 flex-col justify-center border-[#242424] border-b">
-            <div className="grid grid-cols-4">
-              {comparisons.map((item, i) => (
+        {/* benefits list */}
+        <div className="flex flex-1 flex-col justify-center px-8">
+          <div className="space-y-8 px-6">
+            {benefits.map((item) => (
+              <div key={item.title} className="flex items-start gap-6">
                 <div
-                  key={item.before}
-                  className={`flex flex-col gap-4 px-6 py-5 ${i < 3 ? 'border-[#242424] border-r' : ''}`}
-                >
-                  {/* before */}
-                  <div>
-                    <span className="font-mono text-[10px] tracking-wider text-[#666] uppercase">
-                      Before
-                    </span>
-                    <p className="mt-1.5 text-sm text-[#a0a0a0] leading-relaxed">
-                      {item.before}
-                    </p>
-                  </div>
-
-                  {/* arrow */}
-                  <div className="flex items-center">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      className="text-[#444]"
-                      aria-hidden="true"
-                      role="presentation"
-                    >
-                      <path
-                        d="M8 3v10M4 9l4 4 4-4"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-
-                  {/* after */}
-                  <div>
-                    <span className="font-mono text-[10px] tracking-wider text-white uppercase">
-                      After
-                    </span>
-                    <p className="mt-1.5 text-sm text-white leading-relaxed">
-                      {item.after}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* bottom section: common patterns */}
-          <div className="flex flex-1 flex-col justify-center">
-            {/* section label */}
-            <div className="border-[#242424] border-b px-6 py-3">
-              <span className="font-mono text-xs text-[#666]">
-                Common patterns
-              </span>
-            </div>
-
-            {/* three use-case pattern cards */}
-            <div className="grid flex-1 grid-cols-3">
-              {patterns.map((pattern, i) => (
-                <div
-                  key={pattern.title}
-                  className={`flex flex-col justify-center px-6 py-5 ${i < 2 ? 'border-[#242424] border-r' : ''}`}
-                >
-                  <div
-                    className="mb-3 h-0.5 w-8 rounded-full"
-                    style={{ backgroundColor: pattern.color }}
-                  />
-                  <h3 className="mb-1.5 font-semibold text-base text-white">
-                    {pattern.title}
+                  className="mt-2.5 h-2 w-2 shrink-0 rounded-full"
+                  style={{ backgroundColor: item.color }}
+                />
+                <div>
+                  <h3
+                    className="mb-1.5 text-xl font-semibold"
+                    style={{ color: item.color }}
+                  >
+                    {item.title}
                   </h3>
-                  <p className="text-[13px] text-[#a0a0a0] leading-relaxed">
-                    {pattern.description}
+                  <p className="max-w-2xl text-base text-[#a0a0a0] leading-relaxed">
+                    {item.description}
                   </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

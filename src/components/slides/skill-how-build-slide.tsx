@@ -53,14 +53,8 @@ export default function SkillHowBuildSlide() {
 
         <div className="flex flex-1 gap-8 p-8">
           {/* left column: principles */}
-          <div className="flex flex-1 flex-col">
-            <p className="mb-5 text-lg text-[#a0a0a0] leading-relaxed">
-              Skill building is an art -- like software engineering for AI
-              agents. It requires thinking about UX, context engineering, and
-              edge cases.
-            </p>
-
-            <div className="space-y-3">
+          <div className="flex flex-1 flex-col justify-center">
+            <div className="space-y-4">
               {principles.map((p, i) => (
                 <div
                   key={p.label}

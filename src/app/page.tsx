@@ -18,6 +18,9 @@ import ComposableArchitectureSlide from "@/components/slides/composable-architec
 import UIIntegrationSlide from "@/components/slides/ui-integration-slide";
 import ToolApprovalSlide from "@/components/slides/tool-approval-slide";
 import DemoSlide from "@/components/slides/demo-slide";
+import AiGatewaySlide from "@/components/slides/ai-gateway-slide";
+import AgentSetupSlide from "@/components/slides/agent-setup-slide";
+import AgentBuildSlide from "@/components/slides/agent-build-slide";
 import SkillsTitleSlide from "@/components/slides/skills-title-slide";
 import SkillDefinitionSlide from "@/components/slides/skill-definition-slide";
 import SkillWhySlide from "@/components/slides/skill-why-slide";
@@ -42,6 +45,9 @@ const slides = [
   { component: UIIntegrationSlide, title: "UI Integration" },
   { component: ToolApprovalSlide, title: "Tool Approval" },
   { component: DemoSlide, title: "Demo" },
+  { component: AiGatewaySlide, title: "AI Gateway Setup" },
+  { component: AgentSetupSlide, title: "Agent Setup" },
+  { component: AgentBuildSlide, title: "Build With Agent" },
   { component: SkillsTitleSlide, title: "Skills" },
   { component: SkillDefinitionSlide, title: "What is a Skill" },
   { component: SkillWhySlide, title: "Why build a Skill" },

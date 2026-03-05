@@ -26,6 +26,8 @@ const steps = [
       'One command. No build step, no npm publish, no config.',
     code: (
       <>
+        <span className="text-[#9ca3af]">{'# install from GitHub'}</span>
+        {'\n'}
         <span className="text-[#c472fb]">npx</span>
         <span className="text-white">{' skills add '}</span>
         <span className="text-[#62c073]">{'<org/repo>'}</span>
@@ -71,7 +73,7 @@ export default function SkillDeploySlide() {
                 key={step.number}
                 className="flex flex-col rounded-lg border border-[#242424] bg-black/40"
               >
-                <div className="border-[#242424] border-b px-6 py-5">
+                <div className="min-h-[140px] border-[#242424] border-b px-6 py-5">
                   <div className="mb-3 flex items-center gap-3">
                     <span
                       className="font-mono text-sm"
@@ -89,7 +91,7 @@ export default function SkillDeploySlide() {
                 </div>
                 <div className="flex flex-1 items-center px-6 py-5">
                   <div className="w-full rounded-lg border border-[#242424] bg-black/60 p-5">
-                    <pre className="text-sm leading-relaxed">
+                    <pre className="min-h-[2.75rem] text-sm leading-relaxed">
                       <code>{step.code}</code>
                     </pre>
                   </div>
